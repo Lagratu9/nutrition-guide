@@ -1,154 +1,178 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const app = document.getElementById('app');
+    const app = document.getElementById('content-area');
+    const heroSection = document.getElementById('hero-section');
+    const globalSearchInput = document.getElementById('global-search');
     let allData = null;
+    let allFoodsFlat = []; // Liste plate de tous les aliments pour la recherche
 
-    // --- 1. CHARGEMENT DES DONNÉES ---
+    // Définition manuelle des catégories de repas (virtuelles)
+    const mealCategories = [
+        { id: 'petit-dejeuner', name: 'Petit Déjeuner', icon: '☕', type: 'meal' },
+        { id: 'dejeuner', name: 'Déjeuner', icon: '🥗', type: 'meal' },
+        { id: 'diner', name: 'Dîner', icon: '🌙', type: 'meal' },
+        { id: 'en-cas', name: 'En-cas', icon: '🍎', type: 'meal' }
+    ];
+
+    // --- 1. CHARGEMENT ---
     async function loadData() {
         try {
             const response = await fetch('data.json');
-            if (!response.ok) throw new Error("Erreur chargement JSON");
+            if (!response.ok) throw new Error("Erreur");
             allData = await response.json();
+            
+            // Aplatir les données pour faciliter la recherche globale
+            allData.categories.forEach(cat => {
+                cat.foods.forEach(food => {
+                    // On ajoute l'info de la catégorie parente à l'aliment
+                    allFoodsFlat.push({ ...food, parentCategory: cat.name, parentIcon: cat.icon });
+                });
+            });
+
             renderHome();
         } catch (error) {
-            app.innerHTML = `<div class="error">Impossible de charger les données. Vérifiez le fichier data.json.</div>`;
-            console.error(error);
+            app.innerHTML = `<div style="text-align:center; padding:2rem; color:red;">Erreur de chargement des données.</div>`;
         }
     }
 
-    // --- 2. VUE : ACCUEIL (Liste des catégories) ---
+    // --- 2. ACCUEIL ---
     function renderHome() {
-        app.innerHTML = `
-            <div class="nav-header">
-                <h1 class="page-title">Catégories Alimentaires</h1>
-                <p>Sélectionnez une catégorie pour voir les recommandations.</p>
-            </div>
-            <div class="grid" id="categories-grid"></div>
-        `;
+        heroSection.classList.remove('hidden'); // Afficher la recherche globale
+        globalSearchInput.value = ''; // Reset recherche
 
-        const grid = document.getElementById('categories-grid');
-        
-        allData.categories.forEach(cat => {
-            const card = document.createElement('div');
-            card.className = 'cat-card';
-            card.innerHTML = `
-                <span class="cat-icon">${cat.icon || '🍽️'}</span>
-                <h2 class="cat-name">${cat.name}</h2>
-                <p class="category-desc">${cat.description || ''}</p>
-                <small>${cat.foods.length} aliments</small>
-            `;
-            // Clic sur une catégorie
-            card.addEventListener('click', () => renderCategory(cat));
-            grid.appendChild(card);
+        let html = `
+            <div class="section-label">Par Repas</div>
+            <div class="grid">
+                ${mealCategories.map(cat => createCard(cat)).join('')}
+            </div>
+
+            <div class="section-label">Par Catégorie d'aliments</div>
+            <div class="grid">
+                ${allData.categories.map(cat => createCard(cat)).join('')}
+            </div>
+        `;
+        app.innerHTML = html;
+
+        // Attacher les événements click
+        document.querySelectorAll('.cat-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const id = card.dataset.id;
+                const type = card.dataset.type;
+                if (type === 'meal') {
+                    handleMealClick(id);
+                } else {
+                    handleCategoryClick(id);
+                }
+            });
         });
     }
 
-    // --- 3. VUE : CATÉGORIE (Détails + Recherche) ---
-    function renderCategory(category) {
-        // Structure de la page catégorie
-        app.innerHTML = `
-            <div class="nav-header">
-                <div>
-                    <button id="back-btn" class="back-btn">← Retour à l'accueil</button>
-                    <span> > ${category.name}</span>
-                </div>
-                <h1 class="page-title">${category.icon || ''} ${category.name}</h1>
-                
-                <div class="search-container">
-                    <input type="text" id="local-search" class="search-input" 
-                           placeholder="Rechercher dans ${category.name}..." aria-label="Rechercher">
-                </div>
+    function createCard(item) {
+        // Note: On n'affiche PLUS la description ici comme demandé
+        return `
+            <div class="cat-card" data-id="${item.id}" data-type="${item.type || 'category'}">
+                <span class="cat-icon">${item.icon}</span>
+                <div class="cat-name">${item.name}</div>
             </div>
-
-            <div class="grid" id="foods-grid">
-                </div>
-            <div id="no-results" class="hidden" style="text-align:center; margin-top:2rem;">Aucun aliment trouvé.</div>
         `;
+    }
 
-        // Bouton retour
-        document.getElementById('back-btn').addEventListener('click', renderHome);
+    // --- 3. LOGIQUE CATÉGORIE CLASSIQUE ---
+    function handleCategoryClick(id) {
+        const category = allData.categories.find(c => c.id === id);
+        renderList(category.name, category.foods, category.icon);
+    }
 
-        // Rendu initial des aliments
-        const foodGrid = document.getElementById('foods-grid');
-        const searchInput = document.getElementById('local-search');
-        const noResults = document.getElementById('no-results');
+    // --- 4. LOGIQUE REPAS (Virtuelle) ---
+    function handleMealClick(mealId) {
+        const mealInfo = mealCategories.find(m => m.id === mealId);
+        
+        // Filtrer TOUS les aliments qui ont ce mealId dans 'suitableFor'
+        const filteredFoods = allFoodsFlat.filter(food => 
+            food.suitableFor && food.suitableFor.includes(mealId)
+        );
 
-        // Fonction pour afficher une liste d'aliments
-        function displayFoods(foodsToDisplay) {
-            foodGrid.innerHTML = '';
-            if (foodsToDisplay.length === 0) {
-                noResults.classList.remove('hidden');
-            } else {
-                noResults.classList.add('hidden');
-                foodsToDisplay.forEach(food => {
-                    const el = createFoodCard(food, category.id);
-                    foodGrid.appendChild(el);
-                });
-            }
+        renderList(mealInfo.name, filteredFoods, mealInfo.icon, true);
+    }
+
+    // --- 5. RECHERCHE GLOBALE ---
+    globalSearchInput.addEventListener('input', (e) => {
+        const term = e.target.value.toLowerCase();
+        
+        if (term.length < 2) {
+            if (term.length === 0) renderHome();
+            return;
         }
 
-        // Afficher tout au début
-        displayFoods(category.foods);
+        const results = allFoodsFlat.filter(f => 
+            f.name.toLowerCase().includes(term) || 
+            (f.notes && f.notes.toLowerCase().includes(term))
+        );
 
-        // Logique de recherche (Debouncing léger)
-        let timeout = null;
-        searchInput.addEventListener('input', (e) => {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => {
-                const term = e.target.value.toLowerCase();
-                const filtered = category.foods.filter(f => 
-                    f.name.toLowerCase().includes(term) || 
-                    (f.notes && f.notes.toLowerCase().includes(term))
-                );
-                displayFoods(filtered);
-            }, 150); // 150ms de délai pour perf
-        });
-        
-        // Focus automatique sur la recherche
-        searchInput.focus();
-    }
+        renderList(`Résultats pour "${e.target.value}"`, results, '🔍', false, true);
+    });
 
-    // --- 4. COMPOSANT : CARTE ALIMENT ---
-    function createFoodCard(food, catId) {
-        const div = document.createElement('div');
-        div.className = 'food-card';
-        
-        // Gestion des tags/badges
-        let badgesHtml = '';
-        if (food.tags) {
-            food.tags.forEach(tag => {
-                let cleanTag = tag.replace('-', ' ');
-                let classType = 'default';
-                if(tag === 'choix-optimal' || tag === 'faible-k+') classType = 'optimal';
-                badgesHtml += `<span class="badge ${classType}">${cleanTag}</span>`;
+    // --- 6. AFFICHAGE LISTE (Générique) ---
+    function renderList(title, foods, icon, isMealMode = false, isSearchMode = false) {
+        if (!isSearchMode) heroSection.classList.add('hidden'); // Cacher le gros header si on navigue
+
+        let html = `
+            <div class="nav-header">
+                <button id="back-btn" class="back-btn">← Retour à l'accueil</button>
+                <div class="page-context-title">${icon || ''} ${title}</div>
+                <div style="color:var(--text-secondary)">${foods.length} aliments trouvés</div>
+            </div>
+            
+            <div class="food-list-container">
+        `;
+
+        if (foods.length === 0) {
+            html += `<div style="text-align:center; padding:2rem;">Aucun aliment trouvé.</div>`;
+        } else {
+            foods.forEach(food => {
+                html += createFoodItem(food, isMealMode || isSearchMode);
             });
         }
 
-        // Gestion des warnings
-        let warningHtml = '';
-        if (food.warnings) {
-            warningHtml = `<div class="alert">⚠️ ${food.warnings}</div>`;
-        }
+        html += `</div>`;
+        app.innerHTML = html;
 
-        // Highlights nutritionnels
-        let highlights = '';
-        if (Array.isArray(food.nutritionHighlights) && food.nutritionHighlights.length > 0) {
-            highlights = food.nutritionHighlights.join(', ');
-        } else if (typeof food.nutritionHighlights === 'string') {
-            highlights = food.nutritionHighlights;
-        }
-
-        div.innerHTML = `
-            <div class="food-header">
-                <span class="food-name">${food.name}</span>
-            </div>
-            <div class="badges">${badgesHtml}</div>
-            <p class="food-notes">${food.notes}</p>
-            ${highlights ? `<div class="food-highlight">💡 ${highlights}</div>` : ''}
-            ${warningHtml}
-        `;
-        return div;
+        document.getElementById('back-btn').addEventListener('click', renderHome);
     }
 
-    // Lancer l'app
+    function createFoodItem(food, showCategoryTag) {
+        let tagsHtml = '';
+        
+        // Tag Catégorie (utile si on est en mode Repas ou Recherche)
+        if (showCategoryTag && food.parentCategory) {
+            tagsHtml += `<span class="tag" style="background:#eef2ff; color:#4f46e5">${food.parentCategory}</span>`;
+        }
+
+        if (food.tags) {
+            food.tags.forEach(tag => {
+                let className = 'tag';
+                if (tag === 'choix-optimal') className += ' optimal';
+                tagsHtml += `<span class="${className}">${tag.replace(/-/g, ' ')}</span>`;
+            });
+        }
+
+        let warning = food.warnings ? `<div class="warning-box">⚠️ ${food.warnings}</div>` : '';
+        let notes = food.notes ? `<div style="margin-top:0.25rem;">${food.notes}</div>` : '';
+
+        return `
+            <div class="food-item">
+                <div class="food-details">
+                    <div class="food-name">${food.name}</div>
+                    <div class="food-meta">
+                        ${notes}
+                        ${warning}
+                    </div>
+                </div>
+                <div class="food-tags-column">
+                    <div class="tags">${tagsHtml}</div>
+                </div>
+            </div>
+        `;
+    }
+
     loadData();
 });
