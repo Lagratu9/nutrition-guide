@@ -5,6 +5,22 @@ document.addEventListener('DOMContentLoaded', () => {
     let allData = null;
     let allFoodsFlat = []; 
 
+    // --- 1. CONFIGURATION ---
+
+    // Icônes automatiques (Pour ne pas toucher au JSON)
+    const iconMapping = {
+        'legumes': '🥦',
+        'fruits': '🍓',
+        'proteines-animales': '🥩',
+        'proteines-vegetales': '🫘',
+        'cereales-feculents': '🌾',
+        'produits-laitiers': '🥛',
+        'huiles-graisses': '🫒',
+        'noix-graines': '🥜',
+        'herbes-epices': '🌿',
+        'default': '🍽️'
+    };
+
     // Définition des Repas
     const mealCategories = [
         { id: 'petit-dejeuner', name: 'Petit Déjeuner', icon: '☕', type: 'meal' },
@@ -13,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'en-cas', name: 'En-cas', icon: '🍎', type: 'meal' }
     ];
 
-    // --- 1. CHARGEMENT ---
+    // --- 2. CHARGEMENT ---
     async function loadData() {
         try {
             const response = await fetch('data.json');
@@ -23,11 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Aplatir pour recherche globale
             if (allData.categories) {
                 allData.categories.forEach(cat => {
+                    // On détermine l'icône ici
+                    const icon = iconMapping[cat.id] || cat.icon || iconMapping['default'];
+                    
                     if(cat.foods) {
                         cat.foods.forEach(food => {
-                            // On sécurise l'icône ici aussi
-                            const safeIcon = cat.icon || '🍽️';
-                            allFoodsFlat.push({ ...food, parentCategory: cat.name, parentIcon: safeIcon });
+                            allFoodsFlat.push({ ...food, parentCategory: cat.name, parentIcon: icon });
                         });
                     }
                 });
@@ -42,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- 2. ACCUEIL ---
+    // --- 3. ACCUEIL ---
     function renderHome() {
         if(heroSection) heroSection.classList.remove('hidden');
         if(globalSearchInput) globalSearchInput.value = '';
@@ -56,7 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             <div class="section-label">Par Catégorie</div>
             <div class="grid">
-                ${allData.categories.map(cat => createCard(cat)).join('')}
+                ${allData.categories.map(cat => {
+                    // Injection de l'icône mapped
+                    const icon = iconMapping[cat.id] || cat.icon || iconMapping['default'];
+                    return createCard({ ...cat, icon: icon });
+                }).join('')}
             </div>
         `;
         app.innerHTML = html;
@@ -73,22 +94,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function createCard(item) {
-        // CORRECTION ICI : Si item.icon n'existe pas, on met une assiette par défaut
-        const iconDisplay = item.icon ? item.icon : '🍽️';
-        
         return `
             <div class="cat-card" data-id="${item.id}" data-type="${item.type || 'category'}">
-                <span class="cat-icon">${iconDisplay}</span>
+                <span class="cat-icon">${item.icon}</span>
                 <div class="cat-name">${item.name}</div>
             </div>
         `;
     }
 
-    // --- 3. NAVIGATION ---
+    // --- 4. NAVIGATION ---
     function handleCategoryClick(id) {
         const category = allData.categories.find(c => c.id === id);
         if(category) {
-            renderList(category.name, category.foods, category.icon);
+            const icon = iconMapping[category.id] || category.icon || iconMapping['default'];
+            renderList(category.name, category.foods, icon);
         }
     }
 
@@ -100,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderList(mealInfo.name, filteredFoods, mealInfo.icon, true);
     }
 
-    // --- 4. RECHERCHE GLOBALE ---
+    // --- 5. RECHERCHE GLOBALE ---
     if(globalSearchInput) {
         globalSearchInput.addEventListener('input', (e) => {
             const term = e.target.value.toLowerCase();
@@ -116,13 +135,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 5. RENDU LISTE ---
+    // --- 6. RENDU LISTE ---
     function renderList(title, foods, icon, isMealMode = false, isSearchMode = false) {
         if(heroSection && !isSearchMode) heroSection.classList.add('hidden');
         
-        // Sécurisation de l'icône du titre
-        const safeIcon = icon || '🍽️';
-
         const localSearchHtml = isSearchMode ? '' : `
             <div class="local-search-container">
                 <input type="text" id="local-search" class="local-search-input" placeholder="Filtrer dans ${title}...">
@@ -132,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let html = `
             <div class="nav-header">
                 <button id="back-btn" class="back-btn">← Retour</button>
-                <div class="page-context-title">${safeIcon} ${title}</div>
+                <div class="page-context-title">${icon} ${title}</div>
                 ${localSearchHtml}
             </div>
             <div class="food-list-container" id="food-list">
@@ -167,18 +183,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- 6. CRÉATION CARTE ALIMENT (CORRECTION UNITÉS) ---
+    // --- 7. CRÉATION CARTE ALIMENT (Unités + Sécurité) ---
     function createFoodItem(food) {
         const v = food.values || {}; 
         
-        // Gestion des valeurs manquantes et ajout des unités
+        // Affichage conditionnel des unités
+        // Si la valeur existe, on ajoute l'unité. Sinon on affiche "xx"
         const kcal = v.kcal ? `${v.kcal} kcal` : 'xx';
-        const ig = v.ig ? v.ig : 'xx'; // L'IG n'a pas d'unité
+        const ig = v.ig ? v.ig : 'xx'; 
         const prot = v.prot ? `${v.prot}g` : 'xx';
         const gluc = v.gluc ? `${v.gluc}g` : 'xx';
         const lip = v.lip ? `${v.lip}g` : 'xx';
         const na = v.na ? `${v.na}mg` : 'xx';
-        const k = v.k ? `${v.k}mg` : 'xx'; // Le Potassium est généralement en milligrammes (mg)
+        const k = v.k ? `${v.k}mg` : 'xx';
 
         return `
             <div class="food-item">
