@@ -3,24 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Guide nutritionnel clinique - Aliments et recommandations">
     <title>Guide Nutritionnel</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <nav class="navbar">
-            <div class="logo">🥗 Guide Nutrition</div>
-            </nav>
+        <div class="header-content">
+            <div class="logo">Guidance Nutritionnelle</div>
+        </div>
     </header>
 
     <main id="app">
-        <div id="loading" class="loading">Chargement des données...</div>
+        <div id="hero-section" class="hero">
+            <h1 class="hero-title">Que souhaitez-vous manger ?</h1>
+            <div class="global-search-wrapper">
+                <input type="text" id="global-search" class="global-search-input" placeholder="Rechercher un aliment (ex: Avocat, Saumon)...">
+            </div>
+        </div>
+
+        <div id="content-area">
+            </div>
     </main>
 
     <footer>
-        <p>Protocole Nutritionnel Clinique - 2026</p>
+        <p>Protocole Clinique 2026</p>
     </footer>
 
     <script src="script.js"></script>
