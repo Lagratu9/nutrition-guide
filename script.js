@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const app = document.getElementById('content-area'); // Attention: assure-toi que ton HTML a bien <div id="content-area"></div> dans le <main>
+    const app = document.getElementById('content-area');
     const heroSection = document.getElementById('hero-section');
     const globalSearchInput = document.getElementById('global-search');
     let allData = null;
@@ -21,17 +21,24 @@ document.addEventListener('DOMContentLoaded', () => {
             allData = await response.json();
             
             // Aplatir pour recherche globale
-            allData.categories.forEach(cat => {
-                cat.foods.forEach(food => {
-                    allFoodsFlat.push({ ...food, parentCategory: cat.name, parentIcon: cat.icon });
+            if (allData.categories) {
+                allData.categories.forEach(cat => {
+                    if(cat.foods) {
+                        cat.foods.forEach(food => {
+                            // On sécurise l'icône ici aussi
+                            const safeIcon = cat.icon || '🍽️';
+                            allFoodsFlat.push({ ...food, parentCategory: cat.name, parentIcon: safeIcon });
+                        });
+                    }
                 });
-            });
+                renderHome();
+            } else {
+                throw new Error("Structure JSON invalide");
+            }
 
-            renderHome();
         } catch (error) {
             console.error(error);
-            // Fallback si l'ID content-area n'existe pas (si tu n'as pas mis à jour le HTML de l'étape précédente)
-            if(app) app.innerHTML = `<div style="text-align:center; padding:2rem; color:red;">Erreur de chargement. Vérifiez data.json</div>`;
+            if(app) app.innerHTML = `<div style="text-align:center; padding:2rem; color:red;">Erreur de chargement ou JSON invalide.</div>`;
         }
     }
 
@@ -39,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderHome() {
         if(heroSection) heroSection.classList.remove('hidden');
         if(globalSearchInput) globalSearchInput.value = '';
-
         if(!app) return;
 
         let html = `
@@ -67,9 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function createCard(item) {
+        // CORRECTION ICI : Si item.icon n'existe pas, on met une assiette par défaut
+        const iconDisplay = item.icon ? item.icon : '🍽️';
+        
         return `
             <div class="cat-card" data-id="${item.id}" data-type="${item.type || 'category'}">
-                <span class="cat-icon">${item.icon}</span>
+                <span class="cat-icon">${iconDisplay}</span>
                 <div class="cat-name">${item.name}</div>
             </div>
         `;
@@ -78,7 +87,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 3. NAVIGATION ---
     function handleCategoryClick(id) {
         const category = allData.categories.find(c => c.id === id);
-        renderList(category.name, category.foods, category.icon);
+        if(category) {
+            renderList(category.name, category.foods, category.icon);
+        }
     }
 
     function handleMealClick(mealId) {
@@ -105,11 +116,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 5. RENDU LISTE AVEC RECHERCHE LOCALE ---
+    // --- 5. RENDU LISTE ---
     function renderList(title, foods, icon, isMealMode = false, isSearchMode = false) {
         if(heroSection && !isSearchMode) heroSection.classList.add('hidden');
+        
+        // Sécurisation de l'icône du titre
+        const safeIcon = icon || '🍽️';
 
-        // Barre de recherche locale (seulement si pas en mode recherche globale)
         const localSearchHtml = isSearchMode ? '' : `
             <div class="local-search-container">
                 <input type="text" id="local-search" class="local-search-input" placeholder="Filtrer dans ${title}...">
@@ -119,13 +132,13 @@ document.addEventListener('DOMContentLoaded', () => {
         let html = `
             <div class="nav-header">
                 <button id="back-btn" class="back-btn">← Retour</button>
-                <div class="page-context-title">${icon || ''} ${title}</div>
+                <div class="page-context-title">${safeIcon} ${title}</div>
                 ${localSearchHtml}
             </div>
             <div class="food-list-container" id="food-list">
         `;
 
-        if (foods.length === 0) {
+        if (!foods || foods.length === 0) {
             html += `<div style="text-align:center; padding:2rem;">Aucun aliment trouvé.</div>`;
         } else {
             foods.forEach(food => {
@@ -137,35 +150,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.getElementById('back-btn').addEventListener('click', renderHome);
 
-        // Activer la recherche locale
         if (!isSearchMode) {
             const localInput = document.getElementById('local-search');
-            localInput.addEventListener('input', (e) => {
-                const term = e.target.value.toLowerCase();
-                const items = document.querySelectorAll('.food-item');
-                items.forEach(item => {
-                    const text = item.innerText.toLowerCase();
-                    if(text.includes(term)) item.classList.remove('hidden');
-                    else item.classList.add('hidden');
+            if(localInput) {
+                localInput.addEventListener('input', (e) => {
+                    const term = e.target.value.toLowerCase();
+                    const items = document.querySelectorAll('.food-item');
+                    items.forEach(item => {
+                        const text = item.innerText.toLowerCase();
+                        if(text.includes(term)) item.classList.remove('hidden');
+                        else item.classList.add('hidden');
+                    });
                 });
-            });
-            localInput.focus();
+                localInput.focus();
+            }
         }
     }
 
-    // --- 6. CRÉATION CARTE ALIMENT (NOUVEAU DESIGN) ---
+    // --- 6. CRÉATION CARTE ALIMENT (CORRECTION UNITÉS) ---
     function createFoodItem(food) {
-        // Récupération des valeurs ou "xx" par défaut
-        // Structure attendue dans JSON : food.values = { kcal: 100, ig: 5, ... }
         const v = food.values || {}; 
         
-        const kcal = v.kcal || 'xx';
-        const ig = v.ig || 'xx';
-        const prot = v.prot || 'xx';
-        const gluc = v.gluc || 'xx';
-        const lip = v.lip || 'xx';
-        const na = v.na || 'xx'; // Sodium
-        const k = v.k || 'xx';   // Potassium
+        // Gestion des valeurs manquantes et ajout des unités
+        const kcal = v.kcal ? `${v.kcal} kcal` : 'xx';
+        const ig = v.ig ? v.ig : 'xx'; // L'IG n'a pas d'unité
+        const prot = v.prot ? `${v.prot}g` : 'xx';
+        const gluc = v.gluc ? `${v.gluc}g` : 'xx';
+        const lip = v.lip ? `${v.lip}g` : 'xx';
+        const na = v.na ? `${v.na}mg` : 'xx';
+        const k = v.k ? `${v.k}mg` : 'xx'; // Le Potassium est généralement en milligrammes (mg)
 
         return `
             <div class="food-item">
@@ -177,13 +190,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
 
                 <div class="nutri-grid">
-                    <span class="nutri-bubble bubble-yellow">Kcal (100g) = ${kcal}</span>
-                    <span class="nutri-bubble bubble-orange">IG = ${ig}</span>
-                    <span class="nutri-bubble bubble-blue">Protéines = ${prot}</span>
-                    <span class="nutri-bubble bubble-red">Glucides = ${gluc}</span>
-                    <span class="nutri-bubble bubble-green">Lipides = ${lip}</span>
-                    <span class="nutri-bubble bubble-mauve">Sodium = ${na}</span>
-                    <span class="nutri-bubble bubble-violet">Potassium = ${k}</span>
+                    <span class="nutri-bubble bubble-yellow">Kcal (100g) : ${kcal}</span>
+                    <span class="nutri-bubble bubble-orange">IG : ${ig}</span>
+                    <span class="nutri-bubble bubble-blue">Protéines : ${prot}</span>
+                    <span class="nutri-bubble bubble-red">Glucides : ${gluc}</span>
+                    <span class="nutri-bubble bubble-green">Lipides : ${lip}</span>
+                    <span class="nutri-bubble bubble-mauve">Sodium : ${na}</span>
+                    <span class="nutri-bubble bubble-violet">Potassium : ${k}</span>
                 </div>
             </div>
         `;
