@@ -1,11 +1,4 @@
 {
-  "metadata": {
-    "totalAliments": 150,
-    "dateExtraction": "2026-01-31",
-    "version": "1.0",
-    "sourceDocument": "PROTOCOLE NUTRITIONNEL CLINIQUE - Janvier 2026"
-  },
- {
   "categories": [
     {
       "id": "legumes",
