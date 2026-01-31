@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const app = document.getElementById('content-area');
+    const app = document.getElementById('content-area'); // Attention: assure-toi que ton HTML a bien <div id="content-area"></div> dans le <main>
     const heroSection = document.getElementById('hero-section');
     const globalSearchInput = document.getElementById('global-search');
     let allData = null;
-    let allFoodsFlat = []; // Liste plate de tous les aliments pour la recherche
+    let allFoodsFlat = []; 
 
-    // Définition manuelle des catégories de repas (virtuelles)
+    // Définition des Repas
     const mealCategories = [
         { id: 'petit-dejeuner', name: 'Petit Déjeuner', icon: '☕', type: 'meal' },
         { id: 'dejeuner', name: 'Déjeuner', icon: '🥗', type: 'meal' },
@@ -20,24 +20,27 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) throw new Error("Erreur");
             allData = await response.json();
             
-            // Aplatir les données pour faciliter la recherche globale
+            // Aplatir pour recherche globale
             allData.categories.forEach(cat => {
                 cat.foods.forEach(food => {
-                    // On ajoute l'info de la catégorie parente à l'aliment
                     allFoodsFlat.push({ ...food, parentCategory: cat.name, parentIcon: cat.icon });
                 });
             });
 
             renderHome();
         } catch (error) {
-            app.innerHTML = `<div style="text-align:center; padding:2rem; color:red;">Erreur de chargement des données.</div>`;
+            console.error(error);
+            // Fallback si l'ID content-area n'existe pas (si tu n'as pas mis à jour le HTML de l'étape précédente)
+            if(app) app.innerHTML = `<div style="text-align:center; padding:2rem; color:red;">Erreur de chargement. Vérifiez data.json</div>`;
         }
     }
 
     // --- 2. ACCUEIL ---
     function renderHome() {
-        heroSection.classList.remove('hidden'); // Afficher la recherche globale
-        globalSearchInput.value = ''; // Reset recherche
+        if(heroSection) heroSection.classList.remove('hidden');
+        if(globalSearchInput) globalSearchInput.value = '';
+
+        if(!app) return;
 
         let html = `
             <div class="section-label">Par Repas</div>
@@ -45,29 +48,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 ${mealCategories.map(cat => createCard(cat)).join('')}
             </div>
 
-            <div class="section-label">Par Catégorie d'aliments</div>
+            <div class="section-label">Par Catégorie</div>
             <div class="grid">
                 ${allData.categories.map(cat => createCard(cat)).join('')}
             </div>
         `;
         app.innerHTML = html;
 
-        // Attacher les événements click
+        // Clics
         document.querySelectorAll('.cat-card').forEach(card => {
             card.addEventListener('click', () => {
                 const id = card.dataset.id;
                 const type = card.dataset.type;
-                if (type === 'meal') {
-                    handleMealClick(id);
-                } else {
-                    handleCategoryClick(id);
-                }
+                if (type === 'meal') handleMealClick(id);
+                else handleCategoryClick(id);
             });
         });
     }
 
     function createCard(item) {
-        // Note: On n'affiche PLUS la description ici comme demandé
         return `
             <div class="cat-card" data-id="${item.id}" data-type="${item.type || 'category'}">
                 <span class="cat-icon">${item.icon}</span>
@@ -76,99 +75,115 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     }
 
-    // --- 3. LOGIQUE CATÉGORIE CLASSIQUE ---
+    // --- 3. NAVIGATION ---
     function handleCategoryClick(id) {
         const category = allData.categories.find(c => c.id === id);
         renderList(category.name, category.foods, category.icon);
     }
 
-    // --- 4. LOGIQUE REPAS (Virtuelle) ---
     function handleMealClick(mealId) {
         const mealInfo = mealCategories.find(m => m.id === mealId);
-        
-        // Filtrer TOUS les aliments qui ont ce mealId dans 'suitableFor'
         const filteredFoods = allFoodsFlat.filter(food => 
             food.suitableFor && food.suitableFor.includes(mealId)
         );
-
         renderList(mealInfo.name, filteredFoods, mealInfo.icon, true);
     }
 
-    // --- 5. RECHERCHE GLOBALE ---
-    globalSearchInput.addEventListener('input', (e) => {
-        const term = e.target.value.toLowerCase();
-        
-        if (term.length < 2) {
-            if (term.length === 0) renderHome();
-            return;
-        }
+    // --- 4. RECHERCHE GLOBALE ---
+    if(globalSearchInput) {
+        globalSearchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            if (term.length < 2) {
+                if (term.length === 0) renderHome();
+                return;
+            }
+            const results = allFoodsFlat.filter(f => 
+                f.name.toLowerCase().includes(term) || 
+                (f.notes && f.notes.toLowerCase().includes(term))
+            );
+            renderList(`Recherche : "${e.target.value}"`, results, '🔍', false, true);
+        });
+    }
 
-        const results = allFoodsFlat.filter(f => 
-            f.name.toLowerCase().includes(term) || 
-            (f.notes && f.notes.toLowerCase().includes(term))
-        );
-
-        renderList(`Résultats pour "${e.target.value}"`, results, '🔍', false, true);
-    });
-
-    // --- 6. AFFICHAGE LISTE (Générique) ---
+    // --- 5. RENDU LISTE AVEC RECHERCHE LOCALE ---
     function renderList(title, foods, icon, isMealMode = false, isSearchMode = false) {
-        if (!isSearchMode) heroSection.classList.add('hidden'); // Cacher le gros header si on navigue
+        if(heroSection && !isSearchMode) heroSection.classList.add('hidden');
+
+        // Barre de recherche locale (seulement si pas en mode recherche globale)
+        const localSearchHtml = isSearchMode ? '' : `
+            <div class="local-search-container">
+                <input type="text" id="local-search" class="local-search-input" placeholder="Filtrer dans ${title}...">
+            </div>
+        `;
 
         let html = `
             <div class="nav-header">
-                <button id="back-btn" class="back-btn">← Retour à l'accueil</button>
+                <button id="back-btn" class="back-btn">← Retour</button>
                 <div class="page-context-title">${icon || ''} ${title}</div>
-                <div style="color:var(--text-secondary)">${foods.length} aliments trouvés</div>
+                ${localSearchHtml}
             </div>
-            
-            <div class="food-list-container">
+            <div class="food-list-container" id="food-list">
         `;
 
         if (foods.length === 0) {
             html += `<div style="text-align:center; padding:2rem;">Aucun aliment trouvé.</div>`;
         } else {
             foods.forEach(food => {
-                html += createFoodItem(food, isMealMode || isSearchMode);
+                html += createFoodItem(food);
             });
         }
-
         html += `</div>`;
         app.innerHTML = html;
 
         document.getElementById('back-btn').addEventListener('click', renderHome);
+
+        // Activer la recherche locale
+        if (!isSearchMode) {
+            const localInput = document.getElementById('local-search');
+            localInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                const items = document.querySelectorAll('.food-item');
+                items.forEach(item => {
+                    const text = item.innerText.toLowerCase();
+                    if(text.includes(term)) item.classList.remove('hidden');
+                    else item.classList.add('hidden');
+                });
+            });
+            localInput.focus();
+        }
     }
 
-    function createFoodItem(food, showCategoryTag) {
-        let tagsHtml = '';
+    // --- 6. CRÉATION CARTE ALIMENT (NOUVEAU DESIGN) ---
+    function createFoodItem(food) {
+        // Récupération des valeurs ou "xx" par défaut
+        // Structure attendue dans JSON : food.values = { kcal: 100, ig: 5, ... }
+        const v = food.values || {}; 
         
-        // Tag Catégorie (utile si on est en mode Repas ou Recherche)
-        if (showCategoryTag && food.parentCategory) {
-            tagsHtml += `<span class="tag" style="background:#eef2ff; color:#4f46e5">${food.parentCategory}</span>`;
-        }
-
-        if (food.tags) {
-            food.tags.forEach(tag => {
-                let className = 'tag';
-                if (tag === 'choix-optimal') className += ' optimal';
-                tagsHtml += `<span class="${className}">${tag.replace(/-/g, ' ')}</span>`;
-            });
-        }
-
-        let warning = food.warnings ? `<div class="warning-box">⚠️ ${food.warnings}</div>` : '';
-        let notes = food.notes ? `<div style="margin-top:0.25rem;">${food.notes}</div>` : '';
+        const kcal = v.kcal || 'xx';
+        const ig = v.ig || 'xx';
+        const prot = v.prot || 'xx';
+        const gluc = v.gluc || 'xx';
+        const lip = v.lip || 'xx';
+        const na = v.na || 'xx'; // Sodium
+        const k = v.k || 'xx';   // Potassium
 
         return `
             <div class="food-item">
-                <div class="food-details">
-                    <div class="food-name">${food.name}</div>
-                    <div class="food-meta">
-                        ${notes}
-                        ${warning}
+                <div class="food-top-row">
+                    <div>
+                        <div class="food-name">${food.name}</div>
+                        <div class="food-notes">${food.notes || ''}</div>
                     </div>
                 </div>
-                <div class="food-tags-column">
-                    <div class="tags">${tagsHtml}</div>
+
+                <div class="nutri-grid">
+                    <span class="nutri-bubble bubble-yellow">Kcal (100g) = ${kcal}</span>
+                    <span class="nutri-bubble bubble-orange">IG = ${ig}</span>
+                    <span class="nutri-bubble bubble-blue">Protéines = ${prot}</span>
+                    <span class="nutri-bubble bubble-red">Glucides = ${gluc}</span>
+                    <span class="nutri-bubble bubble-green">Lipides = ${lip}</span>
+                    <span class="nutri-bubble bubble-mauve">Sodium = ${na}</span>
+                    <span class="nutri-bubble bubble-violet">Potassium = ${k}</span>
                 </div>
             </div>
         `;
