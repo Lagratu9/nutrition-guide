@@ -5,227 +5,1260 @@
     "version": "1.0",
     "sourceDocument": "PROTOCOLE NUTRITIONNEL CLINIQUE - Janvier 2026"
   },
+ {
   "categories": [
     {
       "id": "legumes",
       "name": "Légumes",
-      "description": "Légumes faibles en potassium et adaptés au régime rénal",
-      "icon": "🥦",
       "foods": [
-        { "id": "carottes-cuites", "name": "Carottes cuites", "notes": "K+: 177mg, IG: 39, Choix optimal, riche en bêta-carotène", "nutritionHighlights": ["Bêta-carotène", "Fibres"], "suitableFor": ["dejeuner", "diner"], "tags": ["choix-optimal", "cuit", "anti-oxydant"], "warnings": "" },
-        { "id": "haricots-verts", "name": "Haricots verts", "notes": "K+: 90mg, IG: 15, Choix optimal, très faible K+", "nutritionHighlights": ["Faible K+", "Fibres"], "suitableFor": ["dejeuner", "diner"], "tags": ["choix-optimal", "vert"], "warnings": "" },
-        { "id": "concombre", "name": "Concombre", "notes": "K+: 76mg, IG: 15, À volonté", "nutritionHighlights": ["Hydratation"], "suitableFor": ["dejeuner", "diner", "en-cas"], "tags": ["choix-optimal", "cru"], "warnings": "" },
-        { "id": "laitue", "name": "Laitue (toutes variétés)", "notes": "K+: 78mg, IG: 15, À volonté", "nutritionHighlights": ["Faible calories"], "suitableFor": ["dejeuner", "diner"], "tags": ["choix-optimal", "salade"], "warnings": "" },
-        { "id": "poivrons", "name": "Poivrons (tous)", "notes": "K+: 104mg, IG: 15, Sûr ≤75g, Excellente source de vitamine C", "nutritionHighlights": ["Vitamine C"], "suitableFor": ["dejeuner", "diner"], "tags": ["choix-optimal", "anti-oxydant"], "warnings": "Respecter portion ≤75g (FODMAP)" },
-        { "id": "chou-vert-rouge", "name": "Chou vert/rouge", "notes": "K+: 73mg, IG: 15, Anti-inflammatoire", "nutritionHighlights": ["Anti-inflammatoire"], "suitableFor": ["dejeuner", "diner"], "tags": ["choix-optimal", "crucifere"], "warnings": "" },
-        { "id": "aubergine", "name": "Aubergine", "notes": "K+: 122mg, IG: 20, Bon choix, riche en fibres", "nutritionHighlights": ["Fibres"], "suitableFor": ["dejeuner", "diner"], "tags": ["choix-optimal", "cuit"], "warnings": "" },
-        { "id": "courgette", "name": "Courgette", "notes": "K+: 114mg, IG: 15, Sûr ≤65g, Polyvalente en cuisine", "nutritionHighlights": [], "suitableFor": ["dejeuner", "diner"], "tags": ["choix-optimal", "polyvalent"], "warnings": "Respecter portion ≤65g" },
-        { "id": "radis", "name": "Radis", "notes": "K+: 135mg, IG: 15, Croquant, peu calorique", "nutritionHighlights": ["Faible calories"], "suitableFor": ["dejeuner", "diner", "en-cas"], "tags": ["choix-optimal", "cru"], "warnings": "" },
-        { "id": "chou-frise-kale", "name": "Chou frisé (kale)", "notes": "K+: 148mg, IG: 15, Sûr ≤75g, Très nutritif", "nutritionHighlights": ["Vitamines", "Minéraux"], "suitableFor": ["dejeuner", "diner"], "tags": ["choix-optimal", "super-aliment"], "warnings": "Respecter portion ≤75g" },
-        { "id": "bok-choy", "name": "Bok choy", "notes": "K+: 100mg, IG: 15, Riche en calcium végétal", "nutritionHighlights": ["Calcium"], "suitableFor": ["dejeuner", "diner"], "tags": ["choix-optimal", "asiatique"], "warnings": "" },
-        { "id": "roquette", "name": "Roquette", "notes": "K+: 74mg, IG: 15, Salade verte", "nutritionHighlights": [], "suitableFor": ["dejeuner", "diner"], "tags": ["salade", "poivre"], "warnings": "" },
-        { "id": "endive", "name": "Endive", "notes": "K+: 79mg, IG: 15, Salade amère, diurétique", "nutritionHighlights": ["Diurétique"], "suitableFor": ["dejeuner", "diner"], "tags": ["salade", "amer"], "warnings": "" },
-        { "id": "radicchio", "name": "Radicchio", "notes": "K+: 121mg, IG: 15, Salade colorée", "nutritionHighlights": ["Anti-oxydant"], "suitableFor": ["dejeuner", "diner"], "tags": ["salade"], "warnings": "" },
-        { "id": "cresson", "name": "Cresson", "notes": "K+: 56mg, IG: 15, Riche en fer (espacer de la L-Thyroxine)", "nutritionHighlights": ["Fer"], "suitableFor": ["dejeuner", "diner"], "tags": ["salade"], "warnings": "Espacer de 4h de la prise de L-Thyroxine" },
-        { "id": "germes-de-soja-cuits", "name": "Germes de soja (cuits)", "notes": "K+: 104mg, IG: 15, CUISSON OBLIGATOIRE (immunosuppression)", "nutritionHighlights": ["Protéines végétales"], "suitableFor": ["dejeuner", "diner"], "tags": ["soja", "cuit"], "warnings": "RISQUE INFECTIEUX: Cuisson obligatoire" },
-        { "id": "pousses-de-bambou", "name": "Pousses de bambou", "notes": "K+: 80mg, IG: 15, Faible en calories", "nutritionHighlights": ["Faible calories"], "suitableFor": ["dejeuner", "diner"], "tags": ["asiatique"], "warnings": "" },
-        { "id": "fenouil", "name": "Fenouil (bulbe seul)", "notes": "K+: 90mg, IG: 15, Sûr ≤47g, Digestif, portion contrôlée", "nutritionHighlights": ["Fibres"], "suitableFor": ["dejeuner", "diner"], "tags": ["digestif"], "warnings": "Respecter portion ≤47g" },
-        { "id": "navet", "name": "Navet", "notes": "K+: 134mg, IG: 30, Bonne source de fibres", "nutritionHighlights": ["Fibres"], "suitableFor": ["dejeuner", "diner"], "tags": ["racine"], "warnings": "" },
-        { "id": "panais", "name": "Panais", "notes": "K+: 182mg, IG: 52, IG modéré, portions modérées", "nutritionHighlights": [], "suitableFor": ["dejeuner", "diner"], "tags": ["racine"], "warnings": "Modérer les portions (IG)" },
-        { "id": "poireau-vert", "name": "Poireau (vert uniquement)", "notes": "K+: 45mg, IG: 15, Substitut d'oignon (partie verte SEULEMENT)", "nutritionHighlights": ["Faible FODMAP"], "suitableFor": ["dejeuner", "diner"], "tags": ["low-fodmap", "aromatique"], "warnings": "Vert uniquement" },
-        { "id": "ciboule-vert", "name": "Ciboule (vert uniquement)", "notes": "K+: 17mg, IG: 15, Substitut d'oignon, saveur douce", "nutritionHighlights": [], "suitableFor": ["dejeuner", "diner"], "tags": ["low-fodmap", "aromatique"], "warnings": "Vert uniquement" },
-        { "id": "ciboulette", "name": "Ciboulette", "notes": "IG: 15, À volonté, aromatique", "nutritionHighlights": [], "suitableFor": ["dejeuner", "diner"], "tags": ["herbe"], "warnings": "" },
-        { "id": "celeri-branche", "name": "Céleri branche", "notes": "K+: 104mg, IG: 15, Faible en calories", "nutritionHighlights": ["Faible calories"], "suitableFor": ["dejeuner", "diner", "en-cas"], "tags": ["crunchy"], "warnings": "" },
-        { "id": "brocoli", "name": "Brocoli (têtes)", "notes": "K+: 135mg, IG: 15, Sûr ≤47g, Portion contrôlée, anti-cancer", "nutritionHighlights": ["Sulforaphane"], "suitableFor": ["dejeuner", "diner"], "tags": ["crucifere", "anti-cancer"], "warnings": "Respecter portion ≤47g" },
-        { "id": "chou-fleur", "name": "Chou-fleur", "notes": "K+: 88mg, IG: 15, Sûr ≤¾ tasse, Contient des polyols, portionner", "nutritionHighlights": [], "suitableFor": ["dejeuner", "diner"], "tags": ["crucifere"], "warnings": "Contient polyols, portionner" },
-        { "id": "tomates-cerises", "name": "Tomates cerises", "notes": "K+: 147mg, IG: 15, Sûr ≤65g, Portion contrôlée", "nutritionHighlights": ["Lycopène"], "suitableFor": ["dejeuner", "diner"], "tags": ["fruit-legume"], "warnings": "Respecter portion ≤65g" },
-        { "id": "tomate-petite", "name": "Tomate (petite, crue)", "notes": "K+: 182mg, IG: 30, Sûr ≤65g, Usage modéré", "nutritionHighlights": ["Lycopène"], "suitableFor": ["dejeuner", "diner"], "tags": ["fruit-legume"], "warnings": "Usage modéré" },
-        { "id": "potiron-citrouille", "name": "Potiron/citrouille", "notes": "K+: 170mg, IG: 52, Sûr ≤63g, Riche en bêta-carotène", "nutritionHighlights": ["Bêta-carotène"], "suitableFor": ["dejeuner", "diner"], "tags": ["courge"], "warnings": "Respecter portion ≤63g" },
-        { "id": "courge-butternut", "name": "Courge butternut", "notes": "K+: 160mg, IG: 51, Sûr petit, Portions limitées", "nutritionHighlights": [], "suitableFor": ["dejeuner", "diner"], "tags": ["courge"], "warnings": "Portions limitées" },
-        { "id": "chayotte", "name": "Chayotte", "notes": "K+: 125mg, IG: 15, Légume tropical peu calorique", "nutritionHighlights": ["Faible calories"], "suitableFor": ["dejeuner", "diner"], "tags": ["exotique"], "warnings": "" },
-        { "id": "gombo", "name": "Gombo (okra)", "notes": "K+: 108mg, IG: 15, Riche en fibres solubles", "nutritionHighlights": ["Fibres solubles"], "suitableFor": ["dejeuner", "diner"], "tags": ["exotique", "gluant"], "warnings": "" },
-        { "id": "rutabaga", "name": "Rutabaga", "notes": "K+: 140mg, IG: 35, Alternative aux pommes de terre", "nutritionHighlights": [], "suitableFor": ["dejeuner", "diner"], "tags": ["racine"], "warnings": "" },
-        { "id": "chou-cavalier", "name": "Chou cavalier (collard)", "notes": "K+: 127mg, IG: 15, Cuit uniquement", "nutritionHighlights": ["Calcium"], "suitableFor": ["dejeuner", "diner"], "tags": ["feuilles"], "warnings": "Cuit uniquement" },
-        { "id": "blette", "name": "Blette (petite portion crue)", "notes": "K+: 136mg, IG: 15, Petites portions recommandées", "nutritionHighlights": [], "suitableFor": ["dejeuner", "diner"], "tags": ["feuilles"], "warnings": "Petites portions" }
+        {
+          "id": "carottes-cuites",
+          "name": "Carottes cuites",
+          "notes": "Choix optimal, riche en bêta-carotène",
+          "values": { "kcal": 35, "ig": 39, "prot": 0.8, "gluc": 8.2, "lip": 0.2, "na": 58, "k": 177 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["choix-optimal", "cuit"]
+        },
+        {
+          "id": "haricots-verts",
+          "name": "Haricots verts",
+          "notes": "Choix optimal, très faible K+",
+          "values": { "kcal": 31, "ig": 15, "prot": 1.8, "gluc": 7.0, "lip": 0.2, "na": 6, "k": 90 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["choix-optimal", "vert"]
+        },
+        {
+          "id": "concombre",
+          "name": "Concombre",
+          "notes": "À volonté",
+          "values": { "kcal": 15, "ig": 15, "prot": 0.7, "gluc": 3.6, "lip": 0.1, "na": 2, "k": 76 },
+          "suitableFor": ["dejeuner", "diner", "en-cas"],
+          "tags": ["choix-optimal", "cru"]
+        },
+        {
+          "id": "laitue",
+          "name": "Laitue (toutes variétés)",
+          "notes": "À volonté",
+          "values": { "kcal": 15, "ig": 15, "prot": 1.4, "gluc": 2.9, "lip": 0.2, "na": 28, "k": 78 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["choix-optimal", "salade"]
+        },
+        {
+          "id": "poivrons",
+          "name": "Poivrons (tous)",
+          "notes": "Sûr ≤75g, Excellente source de vitamine C",
+          "values": { "kcal": 26, "ig": 15, "prot": 1.0, "gluc": 6.0, "lip": 0.3, "na": 4, "k": 104 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["choix-optimal", "anti-oxydant"]
+        },
+        {
+          "id": "chou-vert-rouge",
+          "name": "Chou vert/rouge",
+          "notes": "Anti-inflammatoire",
+          "values": { "kcal": 25, "ig": 15, "prot": 1.3, "gluc": 5.8, "lip": 0.1, "na": 18, "k": 73 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["choix-optimal", "crucifere"]
+        },
+        {
+          "id": "aubergine",
+          "name": "Aubergine",
+          "notes": "Bon choix, riche en fibres",
+          "values": { "kcal": 25, "ig": 20, "prot": 1.0, "gluc": 6.0, "lip": 0.2, "na": 2, "k": 122 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["choix-optimal", "cuit"]
+        },
+        {
+          "id": "courgette",
+          "name": "Courgette",
+          "notes": "Sûr ≤65g, Polyvalente en cuisine",
+          "values": { "kcal": 17, "ig": 15, "prot": 1.2, "gluc": 3.1, "lip": 0.3, "na": 8, "k": 114 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["choix-optimal", "polyvalent"]
+        },
+        {
+          "id": "radis",
+          "name": "Radis",
+          "notes": "Croquant, peu calorique",
+          "values": { "kcal": 16, "ig": 15, "prot": 0.7, "gluc": 3.4, "lip": 0.1, "na": 39, "k": 135 },
+          "suitableFor": ["dejeuner", "diner", "en-cas"],
+          "tags": ["choix-optimal", "cru"]
+        },
+        {
+          "id": "chou-frise-kale",
+          "name": "Chou frisé (kale)",
+          "notes": "Sûr ≤75g, Très nutritif",
+          "values": { "kcal": 49, "ig": 15, "prot": 4.3, "gluc": 8.8, "lip": 0.9, "na": 38, "k": 148 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["choix-optimal", "super-aliment"]
+        },
+        {
+          "id": "bok-choy",
+          "name": "Bok choy",
+          "notes": "Riche en calcium végétal",
+          "values": { "kcal": 13, "ig": 15, "prot": 1.5, "gluc": 2.2, "lip": 0.2, "na": 65, "k": 100 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["choix-optimal", "asiatique"]
+        },
+        {
+          "id": "roquette",
+          "name": "Roquette",
+          "notes": "Salade verte",
+          "values": { "kcal": 25, "ig": 15, "prot": 2.6, "gluc": 3.7, "lip": 0.7, "na": 27, "k": 74 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["salade"]
+        },
+        {
+          "id": "endive",
+          "name": "Endive",
+          "notes": "Salade amère, diurétique",
+          "values": { "kcal": 17, "ig": 15, "prot": 1.1, "gluc": 3.4, "lip": 0.2, "na": 22, "k": 79 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["salade", "amer"]
+        },
+        {
+          "id": "radicchio",
+          "name": "Radicchio",
+          "notes": "Salade colorée",
+          "values": { "kcal": 23, "ig": 15, "prot": 1.4, "gluc": 4.5, "lip": 0.3, "na": 22, "k": 121 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["salade"]
+        },
+        {
+          "id": "cresson",
+          "name": "Cresson",
+          "notes": "Riche en fer (espacer de la L-Thyroxine)",
+          "values": { "kcal": 11, "ig": 15, "prot": 2.3, "gluc": 1.3, "lip": 0.1, "na": 41, "k": 56 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["salade"]
+        },
+        {
+          "id": "germes-de-soja-cuits",
+          "name": "Germes de soja (cuits)",
+          "notes": "CUISSON OBLIGATOIRE (immunosuppression)",
+          "values": { "kcal": 30, "ig": 15, "prot": 3.0, "gluc": 5.9, "lip": 0.2, "na": 6, "k": 104 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["soja", "cuit"]
+        },
+        {
+          "id": "pousses-de-bambou",
+          "name": "Pousses de bambou",
+          "notes": "Faible en calories",
+          "values": { "kcal": 27, "ig": 15, "prot": 2.6, "gluc": 5.2, "lip": 0.3, "na": 4, "k": 80 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["asiatique"]
+        },
+        {
+          "id": "fenouil",
+          "name": "Fenouil (bulbe seul)",
+          "notes": "Sûr ≤47g, Digestif, portion contrôlée",
+          "values": { "kcal": 31, "ig": 15, "prot": 1.2, "gluc": 7.3, "lip": 0.2, "na": 52, "k": 90 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["digestif"]
+        },
+        {
+          "id": "navet",
+          "name": "Navet",
+          "notes": "Bonne source de fibres",
+          "values": { "kcal": 28, "ig": 30, "prot": 0.9, "gluc": 6.4, "lip": 0.1, "na": 67, "k": 134 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["racine"]
+        },
+        {
+          "id": "panais",
+          "name": "Panais",
+          "notes": "IG modéré, portions modérées",
+          "values": { "kcal": 75, "ig": 52, "prot": 1.2, "gluc": 18.0, "lip": 0.3, "na": 10, "k": 182 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["racine"]
+        },
+        {
+          "id": "poireau-vert",
+          "name": "Poireau (vert uniquement)",
+          "notes": "Substitut d'oignon (partie verte SEULEMENT)",
+          "values": { "kcal": 30, "ig": 15, "prot": 1.5, "gluc": 6.0, "lip": 0.3, "na": 20, "k": 45 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["low-fodmap"]
+        },
+        {
+          "id": "ciboule-vert",
+          "name": "Ciboule (vert uniquement)",
+          "notes": "Substitut d'oignon, saveur douce",
+          "values": { "kcal": 32, "ig": 15, "prot": 1.8, "gluc": 7.3, "lip": 0.2, "na": 16, "k": 17 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["low-fodmap"]
+        },
+        {
+          "id": "ciboulette",
+          "name": "Ciboulette",
+          "notes": "À volonté, aromatique",
+          "values": { "kcal": 30, "ig": 15, "prot": 3.3, "gluc": 4.4, "lip": 0.7, "na": 3, "k": 296 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["herbe"]
+        },
+        {
+          "id": "celeri-branche",
+          "name": "Céleri branche",
+          "notes": "Faible en calories",
+          "values": { "kcal": 16, "ig": 15, "prot": 0.7, "gluc": 3.0, "lip": 0.2, "na": 80, "k": 104 },
+          "suitableFor": ["dejeuner", "diner", "en-cas"],
+          "tags": ["crunchy"]
+        },
+        {
+          "id": "brocoli",
+          "name": "Brocoli (têtes)",
+          "notes": "Sûr ≤47g, Portion contrôlée, anti-cancer",
+          "values": { "kcal": 34, "ig": 15, "prot": 2.8, "gluc": 6.6, "lip": 0.4, "na": 33, "k": 135 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["crucifere"]
+        },
+        {
+          "id": "chou-fleur",
+          "name": "Chou-fleur",
+          "notes": "Sûr ≤¾ tasse, Contient des polyols, portionner",
+          "values": { "kcal": 25, "ig": 15, "prot": 1.9, "gluc": 5.0, "lip": 0.3, "na": 30, "k": 88 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["crucifere"]
+        },
+        {
+          "id": "tomates-cerises",
+          "name": "Tomates cerises",
+          "notes": "Sûr ≤65g, Portion contrôlée",
+          "values": { "kcal": 18, "ig": 15, "prot": 0.9, "gluc": 3.9, "lip": 0.2, "na": 5, "k": 147 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["fruit-legume"]
+        },
+        {
+          "id": "tomate-petite",
+          "name": "Tomate (petite, crue)",
+          "notes": "Sûr ≤65g, Usage modéré",
+          "values": { "kcal": 18, "ig": 30, "prot": 0.9, "gluc": 3.9, "lip": 0.2, "na": 5, "k": 182 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["fruit-legume"]
+        },
+        {
+          "id": "potiron-citrouille",
+          "name": "Potiron/citrouille",
+          "notes": "Sûr ≤63g, Riche en bêta-carotène",
+          "values": { "kcal": 26, "ig": 52, "prot": 1.0, "gluc": 6.5, "lip": 0.1, "na": 1, "k": 170 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["courge"]
+        },
+        {
+          "id": "courge-butternut",
+          "name": "Courge butternut",
+          "notes": "Sûr petit, Portions limitées",
+          "values": { "kcal": 45, "ig": 51, "prot": 1.0, "gluc": 11.7, "lip": 0.1, "na": 4, "k": 160 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["courge"]
+        },
+        {
+          "id": "chayotte",
+          "name": "Chayotte",
+          "notes": "Légume tropical peu calorique",
+          "values": { "kcal": 19, "ig": 15, "prot": 0.8, "gluc": 4.5, "lip": 0.1, "na": 2, "k": 125 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["exotique"]
+        },
+        {
+          "id": "gombo",
+          "name": "Gombo (okra)",
+          "notes": "Riche en fibres solubles",
+          "values": { "kcal": 33, "ig": 15, "prot": 1.9, "gluc": 7.5, "lip": 0.2, "na": 7, "k": 108 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["exotique"]
+        },
+        {
+          "id": "rutabaga",
+          "name": "Rutabaga",
+          "notes": "Alternative aux pommes de terre",
+          "values": { "kcal": 37, "ig": 35, "prot": 1.1, "gluc": 8.6, "lip": 0.2, "na": 12, "k": 140 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["racine"]
+        },
+        {
+          "id": "chou-cavalier",
+          "name": "Chou cavalier (collard)",
+          "notes": "Cuit uniquement",
+          "values": { "kcal": 32, "ig": 15, "prot": 3.0, "gluc": 5.4, "lip": 0.6, "na": 17, "k": 127 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["feuilles"]
+        },
+        {
+          "id": "blette",
+          "name": "Blette (petite portion crue)",
+          "notes": "Petites portions recommandées",
+          "values": { "kcal": 19, "ig": 15, "prot": 1.8, "gluc": 3.7, "lip": 0.2, "na": 213, "k": 136 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["feuilles"]
+        }
       ]
     },
     {
       "id": "fruits",
       "name": "Fruits",
-      "description": "Fruits à faible indice glycémique et potassium contrôlé",
-      "icon": "🍓",
       "foods": [
-        { "id": "myrtilles", "name": "Myrtilles", "notes": "K+: 57mg, IG: 53, Sûr ≤20 baies, Optimal, antioxydant majeur", "nutritionHighlights": ["Antioxydants", "Faible K+"], "suitableFor": ["petit-dejeuner", "en-cas"], "tags": ["choix-optimal", "baies"], "warnings": "" },
-        { "id": "fraises", "name": "Fraises", "notes": "K+: 110mg, IG: 40, Sûr ≤5 moy., Optimal, riche en vitamine C", "nutritionHighlights": ["Vitamine C"], "suitableFor": ["petit-dejeuner", "en-cas"], "tags": ["choix-optimal", "baies"], "warnings": "" },
-        { "id": "framboises", "name": "Framboises", "notes": "K+: 93mg, IG: 32, Optimal, très riches en fibres", "nutritionHighlights": ["Fibres", "Faible sucre"], "suitableFor": ["petit-dejeuner", "en-cas"], "tags": ["choix-optimal", "baies"], "warnings": "" },
-        { "id": "raisin", "name": "Raisin (rouge/vert)", "notes": "K+: 88mg, IG: 53, Resvératrol, anti-inflammatoire", "nutritionHighlights": ["Resvératrol"], "suitableFor": ["en-cas"], "tags": ["choix-optimal", "anti-inflammatoire"], "warnings": "" },
-        { "id": "canneberges", "name": "Canneberges fraîches", "notes": "K+: 45mg, IG: 15, Très faible K+, protecteur urinaire", "nutritionHighlights": ["Santé urinaire", "Faible K+"], "suitableFor": ["petit-dejeuner", "en-cas"], "tags": ["choix-optimal", "acide"], "warnings": "" },
-        { "id": "clementine-mandarine", "name": "Clémentine/mandarine", "notes": "K+: 132mg, IG: 30, Pas d'interaction CYP3A4", "nutritionHighlights": ["Vitamine C"], "suitableFor": ["en-cas"], "tags": ["agrumes"], "warnings": "" },
-        { "id": "tangerine", "name": "Tangerine", "notes": "K+: 132mg, IG: 42, Sûre contrairement au pamplemousse", "nutritionHighlights": ["Vitamine C"], "suitableFor": ["en-cas"], "tags": ["agrumes"], "warnings": "" },
-        { "id": "orange-petite", "name": "Orange (petite)", "notes": "K+: 174mg, IG: 35, Sûr petit, K+ modéré, 1/jour max", "nutritionHighlights": ["Vitamine C"], "suitableFor": ["petit-dejeuner", "en-cas"], "tags": ["agrumes"], "warnings": "1 par jour max (K+)" },
-        { "id": "ananas", "name": "Ananas", "notes": "K+: 89mg, IG: 59, Bromélaïne anti-inflammatoire", "nutritionHighlights": ["Bromélaïne"], "suitableFor": ["en-cas"], "tags": ["exotique"], "warnings": "" },
-        { "id": "papaye", "name": "Papaye", "notes": "K+: 180mg, IG: 56, Sûr ≤½ t., K+ modéré, riche en enzymes", "nutritionHighlights": ["Enzymes"], "suitableFor": ["petit-dejeuner", "en-cas"], "tags": ["exotique"], "warnings": "Respecter portion ≤½ tasse" },
-        { "id": "rhubarbe-cuite", "name": "Rhubarbe (cuite)", "notes": "K+: 175mg, IG: 15, Cuisson obligatoire, peu sucrée", "nutritionHighlights": ["Fibres"], "suitableFor": ["petit-dejeuner", "diner"], "tags": ["cuit"], "warnings": "Cuisson obligatoire" },
-        { "id": "fruit-du-dragon", "name": "Fruit du dragon", "notes": "K+: 138mg, IG: 50, Option exotique, riche en fibres", "nutritionHighlights": ["Fibres"], "suitableFor": ["en-cas"], "tags": ["exotique"], "warnings": "" },
-        { "id": "fruit-de-la-passion", "name": "Fruit de la passion", "notes": "K+: 63mg, IG: 30, Faible K+, graines OK", "nutritionHighlights": ["Faible K+"], "suitableFor": ["en-cas"], "tags": ["exotique"], "warnings": "" },
-        { "id": "melon-miel", "name": "Melon miel (petit)", "notes": "K+: 201mg, IG: 62, Sûr ≤½ t., K+ et IG plus élevés, limiter", "nutritionHighlights": [], "suitableFor": ["en-cas"], "tags": ["melon"], "warnings": "Limiter quantité (K+ et IG)" },
-        { "id": "cantaloup", "name": "Cantaloup (petit)", "notes": "K+: 214mg, IG: 65, Sûr ≤¾ t., K+ et IG plus élevés, limiter", "nutritionHighlights": [], "suitableFor": ["en-cas"], "tags": ["melon"], "warnings": "Limiter quantité (K+ et IG)" },
-        { "id": "citron", "name": "Citron", "notes": "K+: 80mg, IG: 20, Aromatisant, eau citronnée", "nutritionHighlights": ["Vitamine C"], "suitableFor": ["boisson", "assaisonnement"], "tags": ["agrumes", "acide"], "warnings": "" },
-        { "id": "citron-vert", "name": "Citron vert (lime)", "notes": "K+: 68mg, IG: 20, Aromatisant polyvalent", "nutritionHighlights": ["Vitamine C"], "suitableFor": ["boisson", "assaisonnement"], "tags": ["agrumes", "acide"], "warnings": "" },
-        { "id": "noix-de-coco", "name": "Noix de coco fraîche", "notes": "K+: 180mg, IG: 35, Sûr petit, Petites quantités uniquement", "nutritionHighlights": ["Fibres"], "suitableFor": ["en-cas"], "tags": ["gras"], "warnings": "Petites quantités uniquement" },
-        { "id": "plantain-vert", "name": "Plantain vert (cuit)", "notes": "K+: 180mg, IG: 40, IG bas quand vert et cuit", "nutritionHighlights": ["Amidon résistant"], "suitableFor": ["dejeuner", "diner"], "tags": ["exotique"], "warnings": "Bien cuire" },
-        { "id": "kiwi-dore", "name": "Kiwi doré", "notes": "K+: 180mg, IG: 47, Kiwi vert = FODMAP plus élevé", "nutritionHighlights": ["Vitamine C"], "suitableFor": ["petit-dejeuner", "en-cas"], "tags": ["low-fodmap"], "warnings": "Préférer le doré au vert (FODMAP)" },
-        { "id": "graines-grenade", "name": "Graines de grenade", "notes": "K+: 117mg, IG: 35, Sûr petit, Graines seulement, PAS le jus", "nutritionHighlights": ["Antioxydants"], "suitableFor": ["en-cas"], "tags": ["super-aliment"], "warnings": "Graines seulement, PAS de jus" },
-        { "id": "goyave", "name": "Goyave", "notes": "K+: 160mg, IG: 32, Très riche en vitamine C", "nutritionHighlights": ["Vitamine C"], "suitableFor": ["en-cas"], "tags": ["exotique"], "warnings": "" },
-        { "id": "airelles", "name": "Airelles/lingonberries", "notes": "K+: 54mg, IG: 25, Excellent, très faible K+", "nutritionHighlights": ["Faible K+"], "suitableFor": ["petit-dejeuner", "en-cas"], "tags": ["baies"], "warnings": "" },
-        { "id": "mures", "name": "Mûres (en saison)", "notes": "K+: 117mg, IG: 36, Antioxydantes, fibres", "nutritionHighlights": ["Fibres", "Antioxydants"], "suitableFor": ["petit-dejeuner", "en-cas"], "tags": ["baies"], "warnings": "" },
-        { "id": "groseilles", "name": "Groseilles", "notes": "K+: 99mg, IG: 25, Option locale saisonnière", "nutritionHighlights": [], "suitableFor": ["en-cas"], "tags": ["baies", "acide"], "warnings": "" }
+        {
+          "id": "myrtilles",
+          "name": "Myrtilles",
+          "notes": "Sûr ≤20 baies, Optimal, antioxydant majeur",
+          "values": { "kcal": 57, "ig": 53, "prot": 0.7, "gluc": 14.5, "lip": 0.3, "na": 1, "k": 57 },
+          "suitableFor": ["petit-dejeuner", "en-cas"],
+          "tags": ["choix-optimal", "baies"]
+        },
+        {
+          "id": "fraises",
+          "name": "Fraises",
+          "notes": "Sûr ≤5 moy., Optimal, riche en vitamine C",
+          "values": { "kcal": 32, "ig": 40, "prot": 0.7, "gluc": 7.7, "lip": 0.3, "na": 1, "k": 110 },
+          "suitableFor": ["petit-dejeuner", "en-cas"],
+          "tags": ["choix-optimal", "baies"]
+        },
+        {
+          "id": "framboises",
+          "name": "Framboises",
+          "notes": "Optimal, très riches en fibres",
+          "values": { "kcal": 52, "ig": 32, "prot": 1.2, "gluc": 11.9, "lip": 0.7, "na": 1, "k": 93 },
+          "suitableFor": ["petit-dejeuner", "en-cas"],
+          "tags": ["choix-optimal", "baies"]
+        },
+        {
+          "id": "raisin",
+          "name": "Raisin (rouge/vert)",
+          "notes": "Resvératrol, anti-inflammatoire",
+          "values": { "kcal": 67, "ig": 53, "prot": 0.6, "gluc": 17.0, "lip": 0.4, "na": 2, "k": 88 },
+          "suitableFor": ["en-cas"],
+          "tags": ["choix-optimal", "anti-inflammatoire"]
+        },
+        {
+          "id": "canneberges",
+          "name": "Canneberges fraîches",
+          "notes": "Très faible K+, protecteur urinaire",
+          "values": { "kcal": 46, "ig": 15, "prot": 0.4, "gluc": 12.2, "lip": 0.1, "na": 2, "k": 45 },
+          "suitableFor": ["petit-dejeuner", "en-cas"],
+          "tags": ["choix-optimal", "acide"]
+        },
+        {
+          "id": "clementine-mandarine",
+          "name": "Clémentine/mandarine",
+          "notes": "Pas d'interaction CYP3A4",
+          "values": { "kcal": 53, "ig": 30, "prot": 0.8, "gluc": 13.3, "lip": 0.3, "na": 2, "k": 132 },
+          "suitableFor": ["en-cas"],
+          "tags": ["agrumes"]
+        },
+        {
+          "id": "tangerine",
+          "name": "Tangerine",
+          "notes": "Sûre contrairement au pamplemousse",
+          "values": { "kcal": 53, "ig": 42, "prot": 0.8, "gluc": 13.3, "lip": 0.3, "na": 2, "k": 132 },
+          "suitableFor": ["en-cas"],
+          "tags": ["agrumes"]
+        },
+        {
+          "id": "orange-petite",
+          "name": "Orange (petite)",
+          "notes": "Sûr petit, K+ modéré, 1/jour max",
+          "values": { "kcal": 47, "ig": 35, "prot": 0.9, "gluc": 11.8, "lip": 0.1, "na": 0, "k": 174 },
+          "suitableFor": ["petit-dejeuner", "en-cas"],
+          "tags": ["agrumes"]
+        },
+        {
+          "id": "ananas",
+          "name": "Ananas",
+          "notes": "Bromélaïne anti-inflammatoire",
+          "values": { "kcal": 50, "ig": 59, "prot": 0.5, "gluc": 13.1, "lip": 0.1, "na": 1, "k": 89 },
+          "suitableFor": ["en-cas"],
+          "tags": ["exotique"]
+        },
+        {
+          "id": "papaye",
+          "name": "Papaye",
+          "notes": "Sûr ≤½ t., K+ modéré, riche en enzymes",
+          "values": { "kcal": 43, "ig": 56, "prot": 0.5, "gluc": 10.8, "lip": 0.3, "na": 8, "k": 180 },
+          "suitableFor": ["petit-dejeuner", "en-cas"],
+          "tags": ["exotique"]
+        },
+        {
+          "id": "rhubarbe-cuite",
+          "name": "Rhubarbe (cuite)",
+          "notes": "Cuisson obligatoire, peu sucrée",
+          "values": { "kcal": 21, "ig": 15, "prot": 0.9, "gluc": 4.5, "lip": 0.2, "na": 4, "k": 175 },
+          "suitableFor": ["petit-dejeuner", "diner"],
+          "tags": ["cuit"]
+        },
+        {
+          "id": "fruit-du-dragon",
+          "name": "Fruit du dragon",
+          "notes": "Option exotique, riche en fibres",
+          "values": { "kcal": 60, "ig": 50, "prot": 1.2, "gluc": 13.0, "lip": 0.0, "na": 0, "k": 138 },
+          "suitableFor": ["en-cas"],
+          "tags": ["exotique"]
+        },
+        {
+          "id": "fruit-de-la-passion",
+          "name": "Fruit de la passion",
+          "notes": "Faible K+, graines OK",
+          "values": { "kcal": 97, "ig": 30, "prot": 2.2, "gluc": 23.4, "lip": 0.7, "na": 28, "k": 63 },
+          "suitableFor": ["en-cas"],
+          "tags": ["exotique"]
+        },
+        {
+          "id": "melon-miel",
+          "name": "Melon miel (petit)",
+          "notes": "Sûr ≤½ t., K+ et IG plus élevés, limiter",
+          "values": { "kcal": 36, "ig": 62, "prot": 0.5, "gluc": 9.1, "lip": 0.1, "na": 18, "k": 201 },
+          "suitableFor": ["en-cas"],
+          "tags": ["melon"]
+        },
+        {
+          "id": "cantaloup",
+          "name": "Cantaloup (petit)",
+          "notes": "Sûr ≤¾ t., K+ et IG plus élevés, limiter",
+          "values": { "kcal": 34, "ig": 65, "prot": 0.8, "gluc": 8.2, "lip": 0.2, "na": 16, "k": 214 },
+          "suitableFor": ["en-cas"],
+          "tags": ["melon"]
+        },
+        {
+          "id": "citron",
+          "name": "Citron",
+          "notes": "Aromatisant, eau citronnée",
+          "values": { "kcal": 29, "ig": 20, "prot": 1.1, "gluc": 9.3, "lip": 0.3, "na": 2, "k": 80 },
+          "suitableFor": ["boisson", "assaisonnement"],
+          "tags": ["agrumes", "acide"]
+        },
+        {
+          "id": "citron-vert",
+          "name": "Citron vert (lime)",
+          "notes": "Aromatisant polyvalent",
+          "values": { "kcal": 30, "ig": 20, "prot": 0.7, "gluc": 10.5, "lip": 0.2, "na": 2, "k": 68 },
+          "suitableFor": ["boisson", "assaisonnement"],
+          "tags": ["agrumes", "acide"]
+        },
+        {
+          "id": "noix-de-coco",
+          "name": "Noix de coco fraîche",
+          "notes": "Sûr petit, Petites quantités uniquement",
+          "values": { "kcal": 354, "ig": 35, "prot": 3.3, "gluc": 15.2, "lip": 33.5, "na": 20, "k": 180 },
+          "suitableFor": ["en-cas"],
+          "tags": ["gras"]
+        },
+        {
+          "id": "plantain-vert",
+          "name": "Plantain vert (cuit)",
+          "notes": "IG bas quand vert et cuit",
+          "values": { "kcal": 116, "ig": 40, "prot": 1.3, "gluc": 31.0, "lip": 0.4, "na": 4, "k": 180 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["exotique"]
+        },
+        {
+          "id": "kiwi-dore",
+          "name": "Kiwi doré",
+          "notes": "Kiwi vert = FODMAP plus élevé",
+          "values": { "kcal": 61, "ig": 47, "prot": 1.1, "gluc": 15.0, "lip": 0.5, "na": 3, "k": 180 },
+          "suitableFor": ["petit-dejeuner", "en-cas"],
+          "tags": ["low-fodmap"]
+        },
+        {
+          "id": "graines-grenade",
+          "name": "Graines de grenade",
+          "notes": "Sûr petit, Graines seulement, PAS le jus",
+          "values": { "kcal": 83, "ig": 35, "prot": 1.7, "gluc": 18.7, "lip": 1.2, "na": 3, "k": 117 },
+          "suitableFor": ["en-cas"],
+          "tags": ["super-aliment"]
+        },
+        {
+          "id": "goyave",
+          "name": "Goyave",
+          "notes": "Très riche en vitamine C",
+          "values": { "kcal": 68, "ig": 32, "prot": 2.6, "gluc": 14.3, "lip": 1.0, "na": 2, "k": 160 },
+          "suitableFor": ["en-cas"],
+          "tags": ["exotique"]
+        },
+        {
+          "id": "airelles",
+          "name": "Airelles/lingonberries",
+          "notes": "Excellent, très faible K+",
+          "values": { "kcal": 50, "ig": 25, "prot": 0.7, "gluc": 11.5, "lip": 0.3, "na": 2, "k": 54 },
+          "suitableFor": ["petit-dejeuner", "en-cas"],
+          "tags": ["baies"]
+        },
+        {
+          "id": "mures",
+          "name": "Mûres (en saison)",
+          "notes": "Antioxydantes, fibres",
+          "values": { "kcal": 43, "ig": 36, "prot": 1.4, "gluc": 9.6, "lip": 0.5, "na": 1, "k": 117 },
+          "suitableFor": ["petit-dejeuner", "en-cas"],
+          "tags": ["baies"]
+        },
+        {
+          "id": "groseilles",
+          "name": "Groseilles",
+          "notes": "Option locale saisonnière",
+          "values": { "kcal": 56, "ig": 25, "prot": 1.4, "gluc": 13.8, "lip": 0.2, "na": 1, "k": 99 },
+          "suitableFor": ["en-cas"],
+          "tags": ["baies", "acide"]
+        }
       ]
     },
     {
       "id": "proteines-animales",
       "name": "Protéines animales",
-      "description": "Viandes, poissons et œufs. Cuisson complète impérative.",
-      "icon": "🥩",
       "foods": [
-        { "id": "poulet-blanc", "name": "Poulet (blanc)", "notes": "K+: 220mg, P: 196mg, Protéine de référence, BIEN CUIT", "nutritionHighlights": ["Protéines maigres"], "suitableFor": ["dejeuner", "diner"], "tags": ["choix-optimal", "volaille"], "warnings": "Bien cuire" },
-        { "id": "dinde-blanc", "name": "Dinde (blanc)", "notes": "K+: 212mg, P: 183mg, Optimal, très maigre", "nutritionHighlights": ["Protéines maigres"], "suitableFor": ["dejeuner", "diner"], "tags": ["choix-optimal", "volaille"], "warnings": "" },
-        { "id": "oeuf-entier", "name": "Œuf entier", "notes": "K+: 63/œuf, P: 86/œuf, Source B12, JAMAIS cru/coulant", "nutritionHighlights": ["Vitamine B12", "Protéines"], "suitableFor": ["petit-dejeuner", "dejeuner", "diner"], "tags": ["choix-optimal", "economique"], "warnings": "JAMAIS cru ou coulant" },
-        { "id": "blanc-oeuf", "name": "Blanc d'œuf", "notes": "K+: 54mg, P: 5mg, Très faible phosphore", "nutritionHighlights": ["Protéines pures", "Faible phosphore"], "suitableFor": ["petit-dejeuner", "dejeuner", "diner"], "tags": ["choix-optimal", "dietetique"], "warnings": "" },
-        { "id": "cabillaud-morue", "name": "Cabillaud/morue", "notes": "K+: 208mg, P: 117mg, Excellent poisson maigre", "nutritionHighlights": ["Protéines maigres"], "suitableFor": ["dejeuner", "diner"], "tags": ["poisson-blanc"], "warnings": "" },
-        { "id": "tilapia", "name": "Tilapia", "notes": "K+: 280mg, P: 170mg, Bon rapport protéines/K+", "nutritionHighlights": ["Protéines"], "suitableFor": ["dejeuner", "diner"], "tags": ["poisson-blanc"], "warnings": "" },
-        { "id": "sole-limande", "name": "Sole/limande", "notes": "K+: 240mg, P: 120mg, Poisson très maigre", "nutritionHighlights": ["Faible gras"], "suitableFor": ["dejeuner", "diner"], "tags": ["poisson-blanc"], "warnings": "" },
-        { "id": "fletan", "name": "Flétan", "notes": "K+: 380mg, P: 214mg, K+ plus élevé, modérer", "nutritionHighlights": ["Protéines"], "suitableFor": ["dejeuner", "diner"], "tags": ["poisson"], "warnings": "Modérer (K+ élevé)" },
-        { "id": "bar-loup-mer", "name": "Bar/loup de mer", "notes": "K+: 230mg, P: 156mg, Bon choix méditerranéen", "nutritionHighlights": ["Oméga-3"], "suitableFor": ["dejeuner", "diner"], "tags": ["poisson"], "warnings": "" },
-        { "id": "saumon", "name": "Saumon (2x/sem max)", "notes": "K+: 326mg, P: 215mg, Oméga-3 majeur, K+ modéré", "nutritionHighlights": ["Oméga-3", "Vitamine D"], "suitableFor": ["dejeuner", "diner"], "tags": ["poisson-gras", "anti-inflammatoire"], "warnings": "Maximum 2x/semaine" },
-        { "id": "truite", "name": "Truite", "notes": "K+: 340mg, P: 245mg, Oméga-3, alterner avec saumon", "nutritionHighlights": ["Oméga-3"], "suitableFor": ["dejeuner", "diner"], "tags": ["poisson-gras"], "warnings": "" },
-        { "id": "sardine-fraiche", "name": "Sardine fraîche (2x/sem)", "notes": "K+: 320mg, P: 280mg, Oméga-3, phosphore plus élevé", "nutritionHighlights": ["Oméga-3", "Calcium"], "suitableFor": ["dejeuner", "diner"], "tags": ["poisson-gras"], "warnings": "Surveiller phosphore" },
-        { "id": "crevettes", "name": "Crevettes", "notes": "K+: 145mg, P: 201mg, Faible K+, bien cuites", "nutritionHighlights": ["Iode", "Faible K+"], "suitableFor": ["dejeuner", "diner"], "tags": ["fruit-de-mer"], "warnings": "Bien cuire" },
-        { "id": "noix-saint-jacques", "name": "Noix de Saint-Jacques", "notes": "K+: 210mg, P: 250mg, CUISSON COMPLÈTE", "nutritionHighlights": ["Protéines"], "suitableFor": ["dejeuner", "diner"], "tags": ["fruit-de-mer"], "warnings": "CUISSON COMPLÈTE" },
-        { "id": "chair-crabe", "name": "Chair de crabe", "notes": "K+: 190mg, P: 175mg, Bien cuit", "nutritionHighlights": ["Zinc"], "suitableFor": ["dejeuner", "diner"], "tags": ["fruit-de-mer"], "warnings": "Bien cuire" },
-        { "id": "porc-filet-mignon", "name": "Porc (filet mignon)", "notes": "K+: 330mg, P: 190mg, Coupe maigre, bien cuit", "nutritionHighlights": ["Protéines"], "suitableFor": ["dejeuner", "diner"], "tags": ["viande-rouge"], "warnings": "Bien cuire" },
-        { "id": "porc-longe", "name": "Porc (longe)", "notes": "K+: 310mg, P: 200mg, Frais uniquement", "nutritionHighlights": [], "suitableFor": ["dejeuner", "diner"], "tags": ["viande-rouge"], "warnings": "Frais uniquement (pas de charcuterie)" },
-        { "id": "boeuf-filet", "name": "Bœuf (filet)", "notes": "K+: 280mg, P: 170mg, Source B12, 2x/sem max", "nutritionHighlights": ["Fer", "Vitamine B12"], "suitableFor": ["dejeuner", "diner"], "tags": ["viande-rouge"], "warnings": "Max 2x/semaine" },
-        { "id": "boeuf-faux-filet", "name": "Bœuf (faux-filet maigre)", "notes": "K+: 300mg, P: 180mg, Coupe maigre, bien cuit", "nutritionHighlights": ["Fer"], "suitableFor": ["dejeuner", "diner"], "tags": ["viande-rouge"], "warnings": "Bien cuire" },
-        { "id": "agneau-filet", "name": "Agneau (filet)", "notes": "K+: 260mg, P: 160mg, Bon choix occasionnel", "nutritionHighlights": [], "suitableFor": ["dejeuner", "diner"], "tags": ["viande-rouge"], "warnings": "Occasionnel" },
-        { "id": "canard-magret", "name": "Canard (magret sans peau)", "notes": "K+: 230mg, P: 160mg, Retirer la peau", "nutritionHighlights": ["Fer"], "suitableFor": ["dejeuner", "diner"], "tags": ["volaille"], "warnings": "Retirer la peau" },
-        { "id": "lapin", "name": "Lapin", "notes": "K+: 210mg, P: 185mg, Très maigre", "nutritionHighlights": ["Protéines maigres"], "suitableFor": ["dejeuner", "diner"], "tags": ["viande-blanche"], "warnings": "" },
-        { "id": "gibier-chevreuil", "name": "Gibier (chevreuil)", "notes": "K+: 260mg, P: 175mg, Frais uniquement, bien cuit", "nutritionHighlights": ["Fer"], "suitableFor": ["dejeuner", "diner"], "tags": ["viande-rouge"], "warnings": "Frais uniquement, bien cuire" },
-        { "id": "caille", "name": "Caille", "notes": "K+: 180mg, P: 150mg, Option variée", "nutritionHighlights": [], "suitableFor": ["dejeuner", "diner"], "tags": ["volaille"], "warnings": "" },
-        { "id": "dorade", "name": "Dorade", "notes": "K+: 250mg, P: 180mg, Poisson méditerranéen", "nutritionHighlights": [], "suitableFor": ["dejeuner", "diner"], "tags": ["poisson"], "warnings": "" },
-        { "id": "merlu-colin", "name": "Merlu/colin", "notes": "K+: 220mg, P: 140mg, Poisson maigre courant", "nutritionHighlights": ["Faible gras"], "suitableFor": ["dejeuner", "diner"], "tags": ["poisson-blanc"], "warnings": "" },
-        { "id": "lieu-noir", "name": "Lieu noir", "notes": "K+: 210mg, P: 160mg, Alternative au cabillaud", "nutritionHighlights": [], "suitableFor": ["dejeuner", "diner"], "tags": ["poisson-blanc"], "warnings": "" }
+        {
+          "id": "poulet-blanc",
+          "name": "Poulet (blanc)",
+          "notes": "P: 196mg, Protéine de référence, BIEN CUIT",
+          "values": { "kcal": 165, "ig": 0, "prot": 31.0, "gluc": 0.0, "lip": 3.6, "na": 74, "k": 220 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["choix-optimal", "volaille"]
+        },
+        {
+          "id": "dinde-blanc",
+          "name": "Dinde (blanc)",
+          "notes": "P: 183mg, Optimal, très maigre",
+          "values": { "kcal": 147, "ig": 0, "prot": 30.1, "gluc": 0.0, "lip": 2.1, "na": 63, "k": 212 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["choix-optimal", "volaille"]
+        },
+        {
+          "id": "oeuf-entier",
+          "name": "Œuf entier",
+          "notes": "P: 86/œuf, Source B12, JAMAIS cru/coulant",
+          "values": { "kcal": 143, "ig": 0, "prot": 12.6, "gluc": 0.7, "lip": 9.5, "na": 142, "k": 63 },
+          "suitableFor": ["petit-dejeuner", "dejeuner", "diner"],
+          "tags": ["choix-optimal", "economique"]
+        },
+        {
+          "id": "blanc-oeuf",
+          "name": "Blanc d'œuf",
+          "notes": "P: 5mg, Très faible phosphore",
+          "values": { "kcal": 52, "ig": 0, "prot": 10.9, "gluc": 0.7, "lip": 0.2, "na": 166, "k": 54 },
+          "suitableFor": ["petit-dejeuner", "dejeuner", "diner"],
+          "tags": ["choix-optimal", "dietetique"]
+        },
+        {
+          "id": "cabillaud-morue",
+          "name": "Cabillaud/morue",
+          "notes": "P: 117mg, Excellent poisson maigre",
+          "values": { "kcal": 82, "ig": 0, "prot": 17.8, "gluc": 0.0, "lip": 0.7, "na": 54, "k": 208 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["poisson-blanc"]
+        },
+        {
+          "id": "tilapia",
+          "name": "Tilapia",
+          "notes": "P: 170mg, Bon rapport protéines/K+",
+          "values": { "kcal": 96, "ig": 0, "prot": 20.1, "gluc": 0.0, "lip": 1.7, "na": 52, "k": 280 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["poisson-blanc"]
+        },
+        {
+          "id": "sole-limande",
+          "name": "Sole/limande",
+          "notes": "P: 120mg, Poisson très maigre",
+          "values": { "kcal": 86, "ig": 0, "prot": 19.8, "gluc": 0.0, "lip": 1.2, "na": 81, "k": 240 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["poisson-blanc"]
+        },
+        {
+          "id": "fletan",
+          "name": "Flétan",
+          "notes": "P: 214mg, K+ plus élevé, modérer",
+          "values": { "kcal": 111, "ig": 0, "prot": 22.5, "gluc": 0.0, "lip": 2.3, "na": 54, "k": 380 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["poisson"]
+        },
+        {
+          "id": "bar-loup-mer",
+          "name": "Bar/loup de mer",
+          "notes": "P: 156mg, Bon choix méditerranéen",
+          "values": { "kcal": 97, "ig": 0, "prot": 18.4, "gluc": 0.0, "lip": 2.0, "na": 68, "k": 230 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["poisson"]
+        },
+        {
+          "id": "saumon",
+          "name": "Saumon (2x/sem max)",
+          "notes": "P: 215mg, Oméga-3 majeur, K+ modéré",
+          "values": { "kcal": 208, "ig": 0, "prot": 20.4, "gluc": 0.0, "lip": 13.4, "na": 59, "k": 326 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["poisson-gras", "anti-inflammatoire"]
+        },
+        {
+          "id": "truite",
+          "name": "Truite",
+          "notes": "P: 245mg, Oméga-3, alterner avec saumon",
+          "values": { "kcal": 148, "ig": 0, "prot": 20.8, "gluc": 0.0, "lip": 6.6, "na": 52, "k": 340 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["poisson-gras"]
+        },
+        {
+          "id": "sardine-fraiche",
+          "name": "Sardine fraîche (2x/sem)",
+          "notes": "P: 280mg, Oméga-3, phosphore plus élevé",
+          "values": { "kcal": 208, "ig": 0, "prot": 24.6, "gluc": 0.0, "lip": 11.5, "na": 307, "k": 320 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["poisson-gras"]
+        },
+        {
+          "id": "crevettes",
+          "name": "Crevettes",
+          "notes": "P: 201mg, Faible K+, bien cuites",
+          "values": { "kcal": 99, "ig": 0, "prot": 24.0, "gluc": 0.2, "lip": 0.3, "na": 111, "k": 145 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["fruit-de-mer"]
+        },
+        {
+          "id": "noix-saint-jacques",
+          "name": "Noix de Saint-Jacques",
+          "notes": "P: 250mg, CUISSON COMPLÈTE",
+          "values": { "kcal": 88, "ig": 0, "prot": 17.5, "gluc": 2.4, "lip": 0.8, "na": 161, "k": 210 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["fruit-de-mer"]
+        },
+        {
+          "id": "chair-crabe",
+          "name": "Chair de crabe",
+          "notes": "P: 175mg, Bien cuit",
+          "values": { "kcal": 97, "ig": 0, "prot": 19.4, "gluc": 0.0, "lip": 1.5, "na": 250, "k": 190 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["fruit-de-mer"]
+        },
+        {
+          "id": "porc-filet-mignon",
+          "name": "Porc (filet mignon)",
+          "notes": "P: 190mg, Coupe maigre, bien cuit",
+          "values": { "kcal": 143, "ig": 0, "prot": 26.0, "gluc": 0.0, "lip": 3.5, "na": 55, "k": 330 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["viande-rouge"]
+        },
+        {
+          "id": "porc-longe",
+          "name": "Porc (longe)",
+          "notes": "P: 200mg, Frais uniquement",
+          "values": { "kcal": 198, "ig": 0, "prot": 23.7, "gluc": 0.0, "lip": 10.8, "na": 60, "k": 310 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["viande-rouge"]
+        },
+        {
+          "id": "boeuf-filet",
+          "name": "Bœuf (filet)",
+          "notes": "P: 170mg, Source B12, 2x/sem max",
+          "values": { "kcal": 217, "ig": 0, "prot": 26.1, "gluc": 0.0, "lip": 11.8, "na": 54, "k": 280 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["viande-rouge"]
+        },
+        {
+          "id": "boeuf-faux-filet",
+          "name": "Bœuf (faux-filet maigre)",
+          "notes": "P: 180mg, Coupe maigre, bien cuit",
+          "values": { "kcal": 212, "ig": 0, "prot": 20.0, "gluc": 0.0, "lip": 14.0, "na": 60, "k": 300 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["viande-rouge"]
+        },
+        {
+          "id": "agneau-filet",
+          "name": "Agneau (filet)",
+          "notes": "P: 160mg, Bon choix occasionnel",
+          "values": { "kcal": 203, "ig": 0, "prot": 28.2, "gluc": 0.0, "lip": 9.2, "na": 80, "k": 260 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["viande-rouge"]
+        },
+        {
+          "id": "canard-magret",
+          "name": "Canard (magret sans peau)",
+          "notes": "P: 160mg, Retirer la peau",
+          "values": { "kcal": 135, "ig": 0, "prot": 20.0, "gluc": 0.0, "lip": 6.0, "na": 65, "k": 230 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["volaille"]
+        },
+        {
+          "id": "lapin",
+          "name": "Lapin",
+          "notes": "P: 185mg, Très maigre",
+          "values": { "kcal": 136, "ig": 0, "prot": 20.0, "gluc": 0.0, "lip": 5.6, "na": 45, "k": 210 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["viande-blanche"]
+        },
+        {
+          "id": "gibier-chevreuil",
+          "name": "Gibier (chevreuil)",
+          "notes": "P: 175mg, Frais uniquement, bien cuit",
+          "values": { "kcal": 120, "ig": 0, "prot": 23.0, "gluc": 0.0, "lip": 2.4, "na": 50, "k": 260 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["viande-rouge"]
+        },
+        {
+          "id": "caille",
+          "name": "Caille",
+          "notes": "P: 150mg, Option variée",
+          "values": { "kcal": 134, "ig": 0, "prot": 21.8, "gluc": 0.0, "lip": 4.5, "na": 53, "k": 180 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["volaille"]
+        },
+        {
+          "id": "dorade",
+          "name": "Dorade",
+          "notes": "P: 180mg, Poisson méditerranéen",
+          "values": { "kcal": 96, "ig": 0, "prot": 19.7, "gluc": 0.0, "lip": 1.9, "na": 52, "k": 250 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["poisson"]
+        },
+        {
+          "id": "merlu-colin",
+          "name": "Merlu/colin",
+          "notes": "P: 140mg, Poisson maigre courant",
+          "values": { "kcal": 80, "ig": 0, "prot": 17.5, "gluc": 0.0, "lip": 1.1, "na": 70, "k": 220 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["poisson-blanc"]
+        },
+        {
+          "id": "lieu-noir",
+          "name": "Lieu noir",
+          "notes": "P: 160mg, Alternative au cabillaud",
+          "values": { "kcal": 83, "ig": 0, "prot": 19.3, "gluc": 0.0, "lip": 0.7, "na": 90, "k": 210 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["poisson-blanc"]
+        }
       ]
     },
     {
       "id": "proteines-vegetales",
       "name": "Protéines végétales",
-      "description": "Alternatives végétales au soja. Attention aux interactions.",
-      "icon": "🫘",
       "foods": [
-        { "id": "tofu-ferme", "name": "Tofu ferme", "notes": "K+: 120mg, P: 97mg, Protéine végétale (espacer de L-T4)", "nutritionHighlights": ["Protéines végétales"], "suitableFor": ["dejeuner", "diner"], "tags": ["soja", "vegan"], "warnings": "Espacer de L-Thyroxine" },
-        { "id": "tempeh", "name": "Tempeh", "notes": "K+: 185mg, P: 134mg, Soja fermenté, bonne digestion", "nutritionHighlights": ["Probiotiques", "Protéines"], "suitableFor": ["dejeuner", "diner"], "tags": ["soja", "fermente"], "warnings": "" },
-        { "id": "edamame", "name": "Edamame", "notes": "K+: 262mg, Sûr petit, K+ modéré, petites portions", "nutritionHighlights": ["Fibres", "Protéines"], "suitableFor": ["en-cas", "diner"], "tags": ["soja", "aperitif"], "warnings": "Petites portions (K+ modéré)" }
+        {
+          "id": "tofu-ferme",
+          "name": "Tofu ferme",
+          "notes": "P: 97mg, Protéine végétale (espacer de L-T4)",
+          "values": { "kcal": 144, "ig": 15, "prot": 17.3, "gluc": 2.8, "lip": 8.7, "na": 14, "k": 120 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["soja", "vegan"]
+        },
+        {
+          "id": "tempeh",
+          "name": "Tempeh",
+          "notes": "P: 134mg, Soja fermenté, bonne digestion",
+          "values": { "kcal": 166, "ig": 15, "prot": 20.3, "gluc": 7.6, "lip": 6.4, "na": 10, "k": 185 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["soja", "fermente"]
+        },
+        {
+          "id": "edamame",
+          "name": "Edamame",
+          "notes": "Sûr petit, K+ modéré, petites portions",
+          "values": { "kcal": 122, "ig": 15, "prot": 11.9, "gluc": 8.9, "lip": 5.2, "na": 6, "k": 262 },
+          "suitableFor": ["en-cas", "diner"],
+          "tags": ["soja", "aperitif"]
+        }
       ]
     },
     {
       "id": "cereales-feculents",
       "name": "Céréales et féculents",
-      "description": "Sources de glucides complexes, sans gluten privilégié",
-      "icon": "🌾",
       "foods": [
-        { "id": "riz-basmati", "name": "Riz basmati", "notes": "IG: 52-58, Sûr", "nutritionHighlights": ["IG modéré"], "suitableFor": ["dejeuner", "diner"], "tags": ["choix-optimal", "sans-gluten"], "warnings": "" },
-        { "id": "quinoa", "name": "Quinoa", "notes": "IG: 53, Sûr", "nutritionHighlights": ["Protéines complètes"], "suitableFor": ["dejeuner", "diner", "petit-dejeuner"], "tags": ["choix-optimal", "super-aliment"], "warnings": "" },
-        { "id": "sarrasin", "name": "Sarrasin", "notes": "IG: 45-51, Sûr", "nutritionHighlights": ["Fibres"], "suitableFor": ["dejeuner", "diner", "petit-dejeuner"], "tags": ["choix-optimal", "sans-gluten"], "warnings": "" },
-        { "id": "flocons-avoine", "name": "Flocons d'avoine (gros)", "notes": "IG: 42-55, Sûr ≤½ t.", "nutritionHighlights": ["Bêta-glucanes"], "suitableFor": ["petit-dejeuner"], "tags": ["fibres"], "warnings": "Max ½ tasse" },
-        { "id": "millet", "name": "Millet", "notes": "IG: 52, Sûr", "nutritionHighlights": [], "suitableFor": ["dejeuner", "diner"], "tags": ["sans-gluten"], "warnings": "" },
-        { "id": "polenta", "name": "Polenta/semoule de maïs", "notes": "IG: 68, Sûr", "nutritionHighlights": [], "suitableFor": ["dejeuner", "diner"], "tags": ["sans-gluten"], "warnings": "" },
-        { "id": "riz-complet", "name": "Riz complet", "notes": "IG: 50, Sûr", "nutritionHighlights": ["Fibres"], "suitableFor": ["dejeuner"], "tags": ["complet"], "warnings": "" },
-        { "id": "riz-sauvage", "name": "Riz sauvage", "notes": "IG: 45, Sûr", "nutritionHighlights": ["Protéines"], "suitableFor": ["dejeuner", "diner"], "tags": ["graines"], "warnings": "" },
-        { "id": "vermicelles-riz", "name": "Vermicelles de riz", "notes": "IG: 53-65, Sûr", "nutritionHighlights": [], "suitableFor": ["dejeuner", "diner"], "tags": ["asiatique"], "warnings": "" },
-        { "id": "pain-levain-epeautre", "name": "Pain au levain d'épeautre", "notes": "IG: 54, Sûr 2 tr.", "nutritionHighlights": ["Fermentation"], "suitableFor": ["petit-dejeuner", "dejeuner"], "tags": ["pain"], "warnings": "Max 2 tranches" },
-        { "id": "tortilla-mais", "name": "Tortilla de maïs", "notes": "IG: 52, Sûr 1 petit", "nutritionHighlights": [], "suitableFor": ["dejeuner", "diner"], "tags": ["mexicain"], "warnings": "Max 1 petite" },
-        { "id": "amarante", "name": "Amarante", "notes": "IG: 35, Sûr", "nutritionHighlights": ["Protéines"], "suitableFor": ["dejeuner", "diner"], "tags": ["ancien"], "warnings": "" },
-        { "id": "sorgho", "name": "Sorgho", "notes": "IG: 50, Sûr", "nutritionHighlights": [], "suitableFor": ["dejeuner", "diner"], "tags": ["sans-gluten"], "warnings": "" },
-        { "id": "teff", "name": "Teff", "notes": "IG: 57, Sûr", "nutritionHighlights": ["Fer", "Calcium"], "suitableFor": ["dejeuner", "diner"], "tags": ["sans-gluten"], "warnings": "" },
-        { "id": "pates-sans-gluten", "name": "Pâtes sans gluten (maïs)", "notes": "IG: 55-65, Sûr", "nutritionHighlights": [], "suitableFor": ["dejeuner", "diner"], "tags": ["sans-gluten"], "warnings": "" },
-        { "id": "pop-corn-nature", "name": "Pop-corn nature", "notes": "IG: 55, Sûr 3 t.", "nutritionHighlights": ["Fibres"], "suitableFor": ["en-cas"], "tags": ["maïs"], "warnings": "Max 3 tasses, nature" }
+        {
+          "id": "riz-basmati",
+          "name": "Riz basmati",
+          "notes": "Sûr",
+          "values": { "kcal": 360, "ig": 52, "prot": 7.5, "gluc": 78.0, "lip": 1.0, "na": 5, "k": 115 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["choix-optimal", "sans-gluten"]
+        },
+        {
+          "id": "quinoa",
+          "name": "Quinoa",
+          "notes": "Sûr",
+          "values": { "kcal": 368, "ig": 53, "prot": 14.1, "gluc": 64.2, "lip": 6.1, "na": 5, "k": 563 },
+          "suitableFor": ["dejeuner", "diner", "petit-dejeuner"],
+          "tags": ["choix-optimal", "super-aliment"]
+        },
+        {
+          "id": "sarrasin",
+          "name": "Sarrasin",
+          "notes": "Sûr",
+          "values": { "kcal": 343, "ig": 45, "prot": 13.3, "gluc": 71.5, "lip": 3.4, "na": 1, "k": 460 },
+          "suitableFor": ["dejeuner", "diner", "petit-dejeuner"],
+          "tags": ["choix-optimal", "sans-gluten"]
+        },
+        {
+          "id": "flocons-avoine",
+          "name": "Flocons d'avoine (gros)",
+          "notes": "Sûr ≤½ t.",
+          "values": { "kcal": 389, "ig": 42, "prot": 16.9, "gluc": 66.3, "lip": 6.9, "na": 2, "k": 429 },
+          "suitableFor": ["petit-dejeuner"],
+          "tags": ["fibres"]
+        },
+        {
+          "id": "millet",
+          "name": "Millet",
+          "notes": "Sûr",
+          "values": { "kcal": 378, "ig": 52, "prot": 11.0, "gluc": 72.9, "lip": 4.2, "na": 5, "k": 195 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["sans-gluten"]
+        },
+        {
+          "id": "polenta",
+          "name": "Polenta/semoule de maïs",
+          "notes": "Sûr",
+          "values": { "kcal": 362, "ig": 68, "prot": 8.1, "gluc": 76.9, "lip": 1.1, "na": 5, "k": 120 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["sans-gluten"]
+        },
+        {
+          "id": "riz-complet",
+          "name": "Riz complet",
+          "notes": "Sûr",
+          "values": { "kcal": 360, "ig": 50, "prot": 7.5, "gluc": 76.0, "lip": 2.8, "na": 7, "k": 268 },
+          "suitableFor": ["dejeuner"],
+          "tags": ["complet"]
+        },
+        {
+          "id": "riz-sauvage",
+          "name": "Riz sauvage",
+          "notes": "Sûr",
+          "values": { "kcal": 357, "ig": 45, "prot": 14.7, "gluc": 74.9, "lip": 1.1, "na": 7, "k": 427 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["graines"]
+        },
+        {
+          "id": "vermicelles-riz",
+          "name": "Vermicelles de riz",
+          "notes": "Sûr",
+          "values": { "kcal": 364, "ig": 53, "prot": 6.0, "gluc": 82.0, "lip": 0.6, "na": 20, "k": 30 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["asiatique"]
+        },
+        {
+          "id": "pain-levain-epeautre",
+          "name": "Pain au levain d'épeautre",
+          "notes": "Sûr 2 tr.",
+          "values": { "kcal": 250, "ig": 54, "prot": 10.0, "gluc": 45.0, "lip": 2.0, "na": 450, "k": 150 },
+          "suitableFor": ["petit-dejeuner", "dejeuner"],
+          "tags": ["pain"]
+        },
+        {
+          "id": "tortilla-mais",
+          "name": "Tortilla de maïs",
+          "notes": "Sûr 1 petit",
+          "values": { "kcal": 218, "ig": 52, "prot": 5.7, "gluc": 45.0, "lip": 2.9, "na": 40, "k": 110 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["mexicain"]
+        },
+        {
+          "id": "amarante",
+          "name": "Amarante",
+          "notes": "Sûr",
+          "values": { "kcal": 371, "ig": 35, "prot": 13.6, "gluc": 65.0, "lip": 7.0, "na": 4, "k": 423 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["ancien"]
+        },
+        {
+          "id": "sorgho",
+          "name": "Sorgho",
+          "notes": "Sûr",
+          "values": { "kcal": 339, "ig": 50, "prot": 11.3, "gluc": 74.6, "lip": 3.3, "na": 6, "k": 350 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["sans-gluten"]
+        },
+        {
+          "id": "teff",
+          "name": "Teff",
+          "notes": "Sûr",
+          "values": { "kcal": 367, "ig": 57, "prot": 13.3, "gluc": 73.0, "lip": 2.4, "na": 12, "k": 427 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["sans-gluten"]
+        },
+        {
+          "id": "pates-sans-gluten",
+          "name": "Pâtes sans gluten (maïs)",
+          "notes": "Sûr",
+          "values": { "kcal": 357, "ig": 55, "prot": 6.8, "gluc": 79.0, "lip": 1.3, "na": 6, "k": 60 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["sans-gluten"]
+        },
+        {
+          "id": "pop-corn-nature",
+          "name": "Pop-corn nature",
+          "notes": "Sûr 3 t.",
+          "values": { "kcal": 387, "ig": 55, "prot": 12.9, "gluc": 77.9, "lip": 4.5, "na": 8, "k": 289 },
+          "suitableFor": ["en-cas"],
+          "tags": ["maïs"]
+        }
       ]
     },
     {
       "id": "produits-laitiers",
       "name": "Produits laitiers et alternatives",
-      "description": "Options sans lactose et fromages faibles en phosphore",
-      "icon": "🥛",
       "foods": [
-        { "id": "lait-sans-lactose", "name": "Lait sans lactose", "notes": "Choix optimal", "nutritionHighlights": ["Calcium", "Protéines"], "suitableFor": ["petit-dejeuner", "en-cas"], "tags": ["choix-optimal", "lactose-free"], "warnings": "" },
-        { "id": "yaourt-sans-lactose", "name": "Yaourt sans lactose nature", "notes": "Choix optimal", "nutritionHighlights": ["Probiotiques", "Calcium"], "suitableFor": ["petit-dejeuner", "en-cas"], "tags": ["choix-optimal", "fermente"], "warnings": "" },
-        { "id": "lait-amande", "name": "Lait d'amande non sucré", "notes": "Choix optimal", "nutritionHighlights": ["Faible calories"], "suitableFor": ["petit-dejeuner", "en-cas"], "tags": ["choix-optimal", "vegetal"], "warnings": "" },
-        { "id": "lait-riz", "name": "Lait de riz", "notes": "Alternative végétale", "nutritionHighlights": [], "suitableFor": ["petit-dejeuner"], "tags": ["vegetal", "hypoallergenique"], "warnings": "" },
-        { "id": "lait-avoine", "name": "Lait d'avoine", "notes": "Alternative végétale", "nutritionHighlights": ["Fibres"], "suitableFor": ["petit-dejeuner"], "tags": ["vegetal"], "warnings": "" },
-        { "id": "lait-coco-conserve", "name": "Lait de coco (conserve)", "notes": "Cuisine", "nutritionHighlights": ["Graisses"], "suitableFor": ["diner", "dejeuner"], "tags": ["vegetal", "gras"], "warnings": "" },
-        { "id": "fromage-comte", "name": "Fromage à pâte dure (comté)", "notes": "Pâte dure", "nutritionHighlights": ["Calcium", "Protéines"], "suitableFor": ["dejeuner", "en-cas"], "tags": ["fromage", "calcium"], "warnings": "" },
-        { "id": "parmesan", "name": "Parmesan", "notes": "Assaisonnement", "nutritionHighlights": ["Protéines"], "suitableFor": ["dejeuner", "diner"], "tags": ["fromage", "assaisonnement"], "warnings": "" },
-        { "id": "emmental", "name": "Emmental", "notes": "Pâte dure", "nutritionHighlights": ["Calcium"], "suitableFor": ["dejeuner", "diner"], "tags": ["fromage"], "warnings": "" },
-        { "id": "brie", "name": "Brie", "notes": "Pâte molle", "nutritionHighlights": [], "suitableFor": ["dejeuner", "en-cas"], "tags": ["fromage"], "warnings": "Au lait pasteurisé uniquement" },
-        { "id": "philadelphia", "name": "Fromage frais type Philadelphia", "notes": "Tartinable", "nutritionHighlights": [], "suitableFor": ["petit-dejeuner", "en-cas"], "tags": ["fromage"], "warnings": "" },
-        { "id": "beurre", "name": "Beurre", "notes": "Matière grasse", "nutritionHighlights": [], "suitableFor": ["petit-dejeuner"], "tags": ["gras"], "warnings": "Modération" },
-        { "id": "ghee", "name": "Ghee (beurre clarifié)", "notes": "Sans lactose", "nutritionHighlights": [], "suitableFor": ["cuisson"], "tags": ["gras", "lactose-free"], "warnings": "" },
-        { "id": "yaourt-grec-sans-lactose", "name": "Yaourt grec sans lactose", "notes": "Riche en protéines", "nutritionHighlights": ["Protéines élevées"], "suitableFor": ["petit-dejeuner", "en-cas"], "tags": ["proteine"], "warnings": "" },
-        { "id": "feta", "name": "Feta (petite quantité)", "notes": "Salé", "nutritionHighlights": [], "suitableFor": ["dejeuner", "diner"], "tags": ["fromage", "sale"], "warnings": "Petite quantité (sel)" }
+        {
+          "id": "lait-sans-lactose",
+          "name": "Lait sans lactose",
+          "notes": "Choix optimal",
+          "values": { "kcal": 45, "ig": 30, "prot": 3.3, "gluc": 4.8, "lip": 1.5, "na": 100, "k": 150 },
+          "suitableFor": ["petit-dejeuner", "en-cas"],
+          "tags": ["choix-optimal", "lactose-free"]
+        },
+        {
+          "id": "yaourt-sans-lactose",
+          "name": "Yaourt sans lactose nature",
+          "notes": "Choix optimal",
+          "values": { "kcal": 63, "ig": 35, "prot": 4.5, "gluc": 5.0, "lip": 2.5, "na": 50, "k": 180 },
+          "suitableFor": ["petit-dejeuner", "en-cas"],
+          "tags": ["choix-optimal", "fermente"]
+        },
+        {
+          "id": "lait-amande",
+          "name": "Lait d'amande non sucré",
+          "notes": "Choix optimal",
+          "values": { "kcal": 15, "ig": 30, "prot": 0.5, "gluc": 0.3, "lip": 1.2, "na": 70, "k": 35 },
+          "suitableFor": ["petit-dejeuner", "en-cas"],
+          "tags": ["choix-optimal", "vegetal"]
+        },
+        {
+          "id": "lait-riz",
+          "name": "Lait de riz",
+          "notes": "Alternative végétale",
+          "values": { "kcal": 47, "ig": 85, "prot": 0.3, "gluc": 9.2, "lip": 1.0, "na": 40, "k": 20 },
+          "suitableFor": ["petit-dejeuner"],
+          "tags": ["vegetal", "hypoallergenique"]
+        },
+        {
+          "id": "lait-avoine",
+          "name": "Lait d'avoine",
+          "notes": "Alternative végétale",
+          "values": { "kcal": 48, "ig": 60, "prot": 1.4, "gluc": 8.1, "lip": 1.5, "na": 40, "k": 140 },
+          "suitableFor": ["petit-dejeuner"],
+          "tags": ["vegetal"]
+        },
+        {
+          "id": "lait-coco-conserve",
+          "name": "Lait de coco (conserve)",
+          "notes": "Cuisine",
+          "values": { "kcal": 197, "ig": 40, "prot": 2.3, "gluc": 2.8, "lip": 21.3, "na": 15, "k": 263 },
+          "suitableFor": ["diner", "dejeuner"],
+          "tags": ["vegetal", "gras"]
+        },
+        {
+          "id": "fromage-comte",
+          "name": "Fromage à pâte dure (comté)",
+          "notes": "Pâte dure",
+          "values": { "kcal": 414, "ig": 0, "prot": 27.0, "gluc": 0.5, "lip": 34.0, "na": 800, "k": 100 },
+          "suitableFor": ["dejeuner", "en-cas"],
+          "tags": ["fromage", "calcium"]
+        },
+        {
+          "id": "parmesan",
+          "name": "Parmesan",
+          "notes": "Assaisonnement",
+          "values": { "kcal": 431, "ig": 0, "prot": 38.0, "gluc": 4.1, "lip": 29.0, "na": 1529, "k": 92 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["fromage", "assaisonnement"]
+        },
+        {
+          "id": "emmental",
+          "name": "Emmental",
+          "notes": "Pâte dure",
+          "values": { "kcal": 380, "ig": 0, "prot": 28.5, "gluc": 0.1, "lip": 29.7, "na": 250, "k": 100 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["fromage"]
+        },
+        {
+          "id": "brie",
+          "name": "Brie",
+          "notes": "Pâte molle",
+          "values": { "kcal": 334, "ig": 0, "prot": 20.7, "gluc": 0.5, "lip": 27.7, "na": 629, "k": 152 },
+          "suitableFor": ["dejeuner", "en-cas"],
+          "tags": ["fromage"]
+        },
+        {
+          "id": "philadelphia",
+          "name": "Fromage frais type Philadelphia",
+          "notes": "Tartinable",
+          "values": { "kcal": 255, "ig": 0, "prot": 5.9, "gluc": 3.2, "lip": 24.0, "na": 320, "k": 120 },
+          "suitableFor": ["petit-dejeuner", "en-cas"],
+          "tags": ["fromage"]
+        },
+        {
+          "id": "beurre",
+          "name": "Beurre",
+          "notes": "Matière grasse",
+          "values": { "kcal": 717, "ig": 0, "prot": 0.8, "gluc": 0.1, "lip": 81.0, "na": 11, "k": 24 },
+          "suitableFor": ["petit-dejeuner"],
+          "tags": ["gras"]
+        },
+        {
+          "id": "ghee",
+          "name": "Ghee (beurre clarifié)",
+          "notes": "Sans lactose",
+          "values": { "kcal": 900, "ig": 0, "prot": 0.0, "gluc": 0.0, "lip": 99.8, "na": 0, "k": 0 },
+          "suitableFor": ["cuisson"],
+          "tags": ["gras", "lactose-free"]
+        },
+        {
+          "id": "yaourt-grec-sans-lactose",
+          "name": "Yaourt grec sans lactose",
+          "notes": "Riche en protéines",
+          "values": { "kcal": 97, "ig": 35, "prot": 9.0, "gluc": 4.0, "lip": 5.0, "na": 40, "k": 150 },
+          "suitableFor": ["petit-dejeuner", "en-cas"],
+          "tags": ["proteine"]
+        },
+        {
+          "id": "feta",
+          "name": "Feta (petite quantité)",
+          "notes": "Salé",
+          "values": { "kcal": 264, "ig": 0, "prot": 14.0, "gluc": 4.0, "lip": 21.0, "na": 1116, "k": 62 },
+          "suitableFor": ["dejeuner", "diner"],
+          "tags": ["fromage", "sale"]
+        }
       ]
     },
     {
       "id": "huiles-graisses",
       "name": "Huiles et graisses",
-      "description": "Lipides de qualité, anti-inflammatoires",
-      "icon": "🫒",
       "foods": [
-        { "id": "huile-olive", "name": "Huile d'olive extra vierge", "notes": "Anti-inflammatoire majeur, matière grasse principale", "nutritionHighlights": ["Oméga-9", "Polyphénols"], "suitableFor": ["cuisson", "assaisonnement"], "tags": ["choix-optimal", "anti-inflammatoire"], "warnings": "" },
-        { "id": "huile-olive-ail", "name": "Huile d'olive infusée à l'ail", "notes": "Saveur d'ail SANS fructanes (non solubles dans l'huile)", "nutritionHighlights": ["Saveur"], "suitableFor": ["cuisson", "assaisonnement"], "tags": ["choix-optimal", "low-fodmap"], "warnings": "" },
-        { "id": "huile-olive-oignon", "name": "Huile d'olive infusée à l'oignon", "notes": "Saveur d'oignon SANS FODMAPs", "nutritionHighlights": ["Saveur"], "suitableFor": ["cuisson", "assaisonnement"], "tags": ["choix-optimal", "low-fodmap"], "warnings": "" },
-        { "id": "huile-avocat", "name": "Huile d'avocat", "notes": "Point de fumée élevé, cuisson haute température", "nutritionHighlights": ["Oméga-9"], "suitableFor": ["cuisson"], "tags": ["cuisson-haute-temperature"], "warnings": "" },
-        { "id": "huile-coco", "name": "Huile de coco", "notes": "Usage modéré, acides gras à chaîne moyenne", "nutritionHighlights": ["MCT"], "suitableFor": ["cuisson"], "tags": ["gras-sature"], "warnings": "Usage modéré" },
-        { "id": "huile-sesame", "name": "Huile de sésame", "notes": "Huile de saveur, finition des plats", "nutritionHighlights": ["Antioxydants"], "suitableFor": ["assaisonnement"], "tags": ["asiatique"], "warnings": "" },
-        { "id": "huile-noix", "name": "Huile de noix", "notes": "Riche en oméga-3, ne pas chauffer", "nutritionHighlights": ["Oméga-3"], "suitableFor": ["assaisonnement"], "tags": ["omega-3"], "warnings": "NE PAS CHAUFFER" },
-        { "id": "huile-lin", "name": "Huile de lin", "notes": "Oméga-3, ne JAMAIS chauffer, conserver au frais", "nutritionHighlights": ["Oméga-3"], "suitableFor": ["assaisonnement"], "tags": ["omega-3"], "warnings": "NE JAMAIS CHAUFFER" },
-        { "id": "huile-colza", "name": "Huile de colza", "notes": "Bon ratio oméga-3/6, cuisson neutre", "nutritionHighlights": ["Oméga-3"], "suitableFor": ["cuisson", "assaisonnement"], "tags": ["equilibre"], "warnings": "" }
+        {
+          "id": "huile-olive",
+          "name": "Huile d'olive extra vierge",
+          "notes": "Anti-inflammatoire majeur, matière grasse principale",
+          "values": { "kcal": 884, "ig": 0, "prot": 0.0, "gluc": 0.0, "lip": 100.0, "na": 0, "k": 0 },
+          "suitableFor": ["cuisson", "assaisonnement"],
+          "tags": ["choix-optimal", "anti-inflammatoire"]
+        },
+        {
+          "id": "huile-olive-ail",
+          "name": "Huile d'olive infusée à l'ail",
+          "notes": "Saveur d'ail SANS fructanes (non solubles dans l'huile)",
+          "values": { "kcal": 884, "ig": 0, "prot": 0.0, "gluc": 0.0, "lip": 100.0, "na": 0, "k": 0 },
+          "suitableFor": ["cuisson", "assaisonnement"],
+          "tags": ["choix-optimal", "low-fodmap"]
+        },
+        {
+          "id": "huile-olive-oignon",
+          "name": "Huile d'olive infusée à l'oignon",
+          "notes": "Saveur d'oignon SANS FODMAPs",
+          "values": { "kcal": 884, "ig": 0, "prot": 0.0, "gluc": 0.0, "lip": 100.0, "na": 0, "k": 0 },
+          "suitableFor": ["cuisson", "assaisonnement"],
+          "tags": ["choix-optimal", "low-fodmap"]
+        },
+        {
+          "id": "huile-avocat",
+          "name": "Huile d'avocat",
+          "notes": "Point de fumée élevé, cuisson haute température",
+          "values": { "kcal": 884, "ig": 0, "prot": 0.0, "gluc": 0.0, "lip": 100.0, "na": 0, "k": 0 },
+          "suitableFor": ["cuisson"],
+          "tags": ["cuisson-haute-temperature"]
+        },
+        {
+          "id": "huile-coco",
+          "name": "Huile de coco",
+          "notes": "Usage modéré, acides gras à chaîne moyenne",
+          "values": { "kcal": 862, "ig": 0, "prot": 0.0, "gluc": 0.0, "lip": 100.0, "na": 0, "k": 0 },
+          "suitableFor": ["cuisson"],
+          "tags": ["gras-sature"]
+        },
+        {
+          "id": "huile-sesame",
+          "name": "Huile de sésame",
+          "notes": "Huile de saveur, finition des plats",
+          "values": { "kcal": 884, "ig": 0, "prot": 0.0, "gluc": 0.0, "lip": 100.0, "na": 0, "k": 0 },
+          "suitableFor": ["assaisonnement"],
+          "tags": ["asiatique"]
+        },
+        {
+          "id": "huile-noix",
+          "name": "Huile de noix",
+          "notes": "Riche en oméga-3, ne pas chauffer",
+          "values": { "kcal": 884, "ig": 0, "prot": 0.0, "gluc": 0.0, "lip": 100.0, "na": 0, "k": 0 },
+          "suitableFor": ["assaisonnement"],
+          "tags": ["omega-3"]
+        },
+        {
+          "id": "huile-lin",
+          "name": "Huile de lin",
+          "notes": "Oméga-3, ne JAMAIS chauffer, conserver au frais",
+          "values": { "kcal": 884, "ig": 0, "prot": 0.0, "gluc": 0.0, "lip": 100.0, "na": 0, "k": 0 },
+          "suitableFor": ["assaisonnement"],
+          "tags": ["omega-3"]
+        },
+        {
+          "id": "huile-colza",
+          "name": "Huile de colza",
+          "notes": "Bon ratio oméga-3/6, cuisson neutre",
+          "values": { "kcal": 884, "ig": 0, "prot": 0.0, "gluc": 0.0, "lip": 100.0, "na": 0, "k": 0 },
+          "suitableFor": ["cuisson", "assaisonnement"],
+          "tags": ["equilibre"]
+        }
       ]
     },
     {
       "id": "noix-graines",
       "name": "Noix, graines et collations",
-      "description": "Sources de fibres et minéraux. Attention aux portions.",
-      "icon": "🥜",
       "foods": [
-        { "id": "amandes", "name": "Amandes", "notes": "Portion: 10 noix (12g), Limite FODMAP stricte, magnésium", "nutritionHighlights": ["Magnésium", "Vitamine E"], "suitableFor": ["en-cas"], "tags": ["oleagineux"], "warnings": "Max 10 noix" },
-        { "id": "noix", "name": "Noix", "notes": "Portion: 10 cerneaux (30g), Oméga-3, anti-inflammatoires", "nutritionHighlights": ["Oméga-3"], "suitableFor": ["en-cas"], "tags": ["omega-3"], "warnings": "" },
-        { "id": "noix-macadamia", "name": "Noix de macadamia", "notes": "Portion: 20 noix, Risque FODMAP faible", "nutritionHighlights": ["Graisses saines"], "suitableFor": ["en-cas"], "tags": ["low-fodmap"], "warnings": "" },
-        { "id": "noix-pecan", "name": "Noix de pécan", "notes": "Portion: 10 moitiés, Bon choix, antioxydantes", "nutritionHighlights": ["Antioxydants"], "suitableFor": ["en-cas"], "tags": ["oleagineux"], "warnings": "" },
-        { "id": "noix-bresil", "name": "Noix du Brésil", "notes": "Portion: 3-4 noix, Source de sélénium", "nutritionHighlights": ["Sélénium"], "suitableFor": ["en-cas"], "tags": ["mineraux"], "warnings": "" },
-        { "id": "cacahuetes", "name": "Cacahuètes", "notes": "Portion: 32 (28g), Bonne source de protéines", "nutritionHighlights": ["Protéines"], "suitableFor": ["en-cas"], "tags": ["legumineuse"], "warnings": "" },
-        { "id": "beurre-cacahuete", "name": "Beurre de cacahuète naturel", "notes": "Portion: 2 c.s., Sans sucre ajouté impérativement", "nutritionHighlights": ["Protéines", "Graisses"], "suitableFor": ["petit-dejeuner", "en-cas"], "tags": ["tartinable"], "warnings": "Sans sucre ajouté" },
-        { "id": "graines-chia", "name": "Graines de chia", "notes": "Portion: 2 c.s., Fibres, oméga-3 (espacer de L-T4)", "nutritionHighlights": ["Oméga-3", "Fibres"], "suitableFor": ["petit-dejeuner"], "tags": ["super-aliment"], "warnings": "Espacer de L-Thyroxine" },
-        { "id": "graines-lin", "name": "Graines de lin", "notes": "Portion: 1 c.s., Oméga-3, fibres (espacer de L-T4)", "nutritionHighlights": ["Oméga-3", "Fibres"], "suitableFor": ["petit-dejeuner"], "tags": ["super-aliment"], "warnings": "Espacer de L-Thyroxine" },
-        { "id": "graines-courge", "name": "Graines de courge (pepitas)", "notes": "Portion: 2 c.s., Zinc, K+ modéré", "nutritionHighlights": ["Zinc"], "suitableFor": ["en-cas", "salade"], "tags": ["mineraux"], "warnings": "" },
-        { "id": "graines-tournesol", "name": "Graines de tournesol", "notes": "Portion: 2 c.s., Vitamine E", "nutritionHighlights": ["Vitamine E"], "suitableFor": ["en-cas", "salade"], "tags": ["oleagineux"], "warnings": "" },
-        { "id": "graines-sesame", "name": "Graines de sésame", "notes": "Portion: 1 c.s., Calcium végétal", "nutritionHighlights": ["Calcium"], "suitableFor": ["assaisonnement"], "tags": ["calcium"], "warnings": "" },
-        { "id": "tahini", "name": "Tahini", "notes": "Portion: 1 c.s., Pâte de sésame, polyvalente", "nutritionHighlights": ["Calcium", "Graisses"], "suitableFor": ["assaisonnement"], "tags": ["calcium", "oriental"], "warnings": "" },
-        { "id": "chocolat-noir", "name": "Chocolat noir ≥70%", "notes": "Portion: 30g max, Phosphore présent, plaisir contrôlé", "nutritionHighlights": ["Magnésium"], "suitableFor": ["en-cas"], "tags": ["plaisir"], "warnings": "Max 30g, Phosphore" }
+        {
+          "id": "amandes",
+          "name": "Amandes",
+          "notes": "Portion: 10 noix (12g), Limite FODMAP stricte, magnésium",
+          "values": { "kcal": 634, "ig": 15, "prot": 25.4, "gluc": 8.0, "lip": 53.4, "na": 4, "k": 668 },
+          "suitableFor": ["en-cas"],
+          "tags": ["oleagineux"]
+        },
+        {
+          "id": "noix",
+          "name": "Noix",
+          "notes": "Portion: 10 cerneaux (30g), Oméga-3, anti-inflammatoires",
+          "values": { "kcal": 698, "ig": 15, "prot": 14.7, "gluc": 5.4, "lip": 67.3, "na": 2, "k": 435 },
+          "suitableFor": ["en-cas"],
+          "tags": ["omega-3"]
+        },
+        {
+          "id": "noix-macadamia",
+          "name": "Noix de macadamia",
+          "notes": "Portion: 20 noix, Risque FODMAP faible",
+          "values": { "kcal": 747, "ig": 15, "prot": 8.5, "gluc": 5.0, "lip": 76.0, "na": 3, "k": 368 },
+          "suitableFor": ["en-cas"],
+          "tags": ["low-fodmap"]
+        },
+        {
+          "id": "noix-pecan",
+          "name": "Noix de pécan",
+          "notes": "Portion: 10 moitiés, Bon choix, antioxydantes",
+          "values": { "kcal": 729, "ig": 15, "prot": 9.2, "gluc": 4.3, "lip": 72.0, "na": 0, "k": 410 },
+          "suitableFor": ["en-cas"],
+          "tags": ["oleagineux"]
+        },
+        {
+          "id": "noix-bresil",
+          "name": "Noix du Brésil",
+          "notes": "Portion: 3-4 noix, Source de sélénium",
+          "values": { "kcal": 682, "ig": 15, "prot": 14.1, "gluc": 3.1, "lip": 68.2, "na": 2, "k": 600 },
+          "suitableFor": ["en-cas"],
+          "tags": ["mineraux"]
+        },
+        {
+          "id": "cacahuetes",
+          "name": "Cacahuètes",
+          "notes": "Portion: 32 (28g), Bonne source de protéines",
+          "values": { "kcal": 605, "ig": 15, "prot": 26.0, "gluc": 9.9, "lip": 51.0, "na": 5, "k": 658 },
+          "suitableFor": ["en-cas"],
+          "tags": ["legumineuse"]
+        },
+        {
+          "id": "beurre-cacahuete",
+          "name": "Beurre de cacahuète naturel",
+          "notes": "Portion: 2 c.s., Sans sucre ajouté impérativement",
+          "values": { "kcal": 614, "ig": 15, "prot": 27.0, "gluc": 11.0, "lip": 50.0, "na": 4, "k": 649 },
+          "suitableFor": ["petit-dejeuner", "en-cas"],
+          "tags": ["tartinable"]
+        },
+        {
+          "id": "graines-chia",
+          "name": "Graines de chia",
+          "notes": "Portion: 2 c.s., Fibres, oméga-3 (espacer de L-T4)",
+          "values": { "kcal": 443, "ig": 10, "prot": 19.5, "gluc": 6.7, "lip": 30.8, "na": 16, "k": 407 },
+          "suitableFor": ["petit-dejeuner"],
+          "tags": ["super-aliment"]
+        },
+        {
+          "id": "graines-lin",
+          "name": "Graines de lin",
+          "notes": "Portion: 1 c.s., Oméga-3, fibres (espacer de L-T4)",
+          "values": { "kcal": 534, "ig": 35, "prot": 18.3, "gluc": 1.6, "lip": 42.2, "na": 30, "k": 813 },
+          "suitableFor": ["petit-dejeuner"],
+          "tags": ["super-aliment"]
+        },
+        {
+          "id": "graines-courge",
+          "name": "Graines de courge (pepitas)",
+          "notes": "Portion: 2 c.s., Zinc, K+ modéré",
+          "values": { "kcal": 574, "ig": 25, "prot": 29.8, "gluc": 14.7, "lip": 49.1, "na": 7, "k": 809 },
+          "suitableFor": ["en-cas", "salade"],
+          "tags": ["mineraux"]
+        },
+        {
+          "id": "graines-tournesol",
+          "name": "Graines de tournesol",
+          "notes": "Portion: 2 c.s., Vitamine E",
+          "values": { "kcal": 619, "ig": 35, "prot": 19.3, "gluc": 15.5, "lip": 54.3, "na": 3, "k": 645 },
+          "suitableFor": ["en-cas", "salade"],
+          "tags": ["oleagineux"]
+        },
+        {
+          "id": "graines-sesame",
+          "name": "Graines de sésame",
+          "notes": "Portion: 1 c.s., Calcium végétal",
+          "values": { "kcal": 605, "ig": 35, "prot": 18.8, "gluc": 10.0, "lip": 53.4, "na": 11, "k": 468 },
+          "suitableFor": ["assaisonnement"],
+          "tags": ["calcium"]
+        },
+        {
+          "id": "tahini",
+          "name": "Tahini",
+          "notes": "Portion: 1 c.s., Pâte de sésame, polyvalente",
+          "values": { "kcal": 633, "ig": 35, "prot": 20.1, "gluc": 14.5, "lip": 56.1, "na": 45, "k": 414 },
+          "suitableFor": ["assaisonnement"],
+          "tags": ["calcium", "oriental"]
+        },
+        {
+          "id": "chocolat-noir",
+          "name": "Chocolat noir ≥70%",
+          "notes": "Portion: 30g max, Phosphore présent, plaisir contrôlé",
+          "values": { "kcal": 579, "ig": 23, "prot": 6.8, "gluc": 34.0, "lip": 42.0, "na": 11, "k": 567 },
+          "suitableFor": ["en-cas"],
+          "tags": ["plaisir"]
+        }
       ]
     },
     {
       "id": "herbes-epices",
       "name": "Herbes, épices et condiments",
-      "description": "Pour donner du goût sans sel ni FODMAPs",
-      "icon": "🌿",
       "foods": [
-        { "id": "curcuma", "name": "Curcuma", "notes": "Anti-inflammatoire puissant, avec poivre noir", "nutritionHighlights": ["Curcumine"], "suitableFor": ["assaisonnement"], "tags": ["anti-inflammatoire", "epice"], "warnings": "" },
-        { "id": "gingembre-frais", "name": "Gingembre frais", "notes": "Anti-nauséeux, anti-inflammatoire", "nutritionHighlights": ["Gingérol"], "suitableFor": ["assaisonnement", "boisson"], "tags": ["digestif", "racine"], "warnings": "" },
-        { "id": "cannelle", "name": "Cannelle (Ceylan)", "notes": "Aide au contrôle glycémique", "nutritionHighlights": ["Antioxydants"], "suitableFor": ["assaisonnement", "petit-dejeuner"], "tags": ["glycemie", "epice"], "warnings": "" },
-        { "id": "thym", "name": "Thym", "notes": "Antiseptique naturel", "nutritionHighlights": [], "suitableFor": ["assaisonnement"], "tags": ["herbe"], "warnings": "" },
-        { "id": "romarin", "name": "Romarin", "notes": "Antioxydant, saveur méditerranéenne", "nutritionHighlights": ["Antioxydants"], "suitableFor": ["assaisonnement"], "tags": ["herbe"], "warnings": "" },
-        { "id": "basilic-frais", "name": "Basilic frais", "notes": "Aromatique, anti-inflammatoire", "nutritionHighlights": ["Vitamine K"], "suitableFor": ["assaisonnement"], "tags": ["herbe", "frais"], "warnings": "" }
+        {
+          "id": "curcuma",
+          "name": "Curcuma",
+          "notes": "Anti-inflammatoire puissant, avec poivre noir",
+          "values": { "kcal": 312, "ig": 0, "prot": 9.7, "gluc": 44.0, "lip": 3.3, "na": 27, "k": 2080 },
+          "suitableFor": ["assaisonnement"],
+          "tags": ["anti-inflammatoire", "epice"]
+        },
+        {
+          "id": "gingembre-frais",
+          "name": "Gingembre frais",
+          "notes": "Anti-nauséeux, anti-inflammatoire",
+          "values": { "kcal": 60, "ig": 15, "prot": 1.2, "gluc": 12.0, "lip": 0.5, "na": 6, "k": 298 },
+          "suitableFor": ["assaisonnement", "boisson"],
+          "tags": ["digestif", "racine"]
+        },
+        {
+          "id": "cannelle",
+          "name": "Cannelle (Ceylan)",
+          "notes": "Aide au contrôle glycémique",
+          "values": { "kcal": 261, "ig": 5, "prot": 3.9, "gluc": 27.0, "lip": 3.2, "na": 26, "k": 500 },
+          "suitableFor": ["assaisonnement", "petit-dejeuner"],
+          "tags": ["glycemie", "epice"]
+        },
+        {
+          "id": "thym",
+          "name": "Thym",
+          "notes": "Antiseptique naturel",
+          "values": { "kcal": 276, "ig": 0, "prot": 9.1, "gluc": 26.9, "lip": 7.4, "na": 55, "k": 814 },
+          "suitableFor": ["assaisonnement"],
+          "tags": ["herbe"]
+        },
+        {
+          "id": "romarin",
+          "name": "Romarin",
+          "notes": "Antioxydant, saveur méditerranéenne",
+          "values": { "kcal": 331, "ig": 0, "prot": 4.9, "gluc": 46.4, "lip": 15.2, "na": 50, "k": 955 },
+          "suitableFor": ["assaisonnement"],
+          "tags": ["herbe"]
+        },
+        {
+          "id": "basilic-frais",
+          "name": "Basilic frais",
+          "notes": "Aromatique, anti-inflammatoire",
+          "values": { "kcal": 27, "ig": 0, "prot": 2.5, "gluc": 0.6, "lip": 0.6, "na": 4, "k": 300 },
+          "suitableFor": ["assaisonnement"],
+          "tags": ["herbe", "frais"]
+        }
       ]
     }
   ]
