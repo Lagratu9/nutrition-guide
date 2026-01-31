@@ -138,3 +138,91 @@ main { max-width: 1000px; margin: 0 auto; padding: 0 1rem 4rem 1rem; }
 
 .hidden { display: none !important; }
 footer { text-align: center; padding: 2rem; color: var(--text-secondary); font-size: 0.8rem; margin-top: 3rem; }
+/* --- CARTES RECETTES (Menus) --- */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.recipe-card {
+    background: #fff;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    border-color: #111827;
+}
+
+.recipe-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.tag-sucre { background: #FEF9C3; color: #854D0E; }
+.tag-sale { background: #E0F2FE; color: #075985; }
+.tag-mixte { background: #F3E8FF; color: #6B21A8; }
+
+.recipe-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem; padding-right: 2rem; }
+.recipe-summary { font-size: 0.9rem; color: #6B7280; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* --- FENÊTRE MODALE (POP-UP) --- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.modal-content {
+    background: white;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    border-radius: 20px;
+    overflow-y: auto;
+    position: relative;
+    padding: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #9CA3AF;
+}
+.close-btn:hover { color: #111827; }
+
+/* Style du contenu dans la modale */
+.modal-h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; }
+.modal-section-title { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #6B7280; margin: 1.5rem 0 0.5rem 0; font-weight: 700; border-bottom: 1px solid #E5E7EB; padding-bottom: 5px; }
+.ingredient-list { list-style: none; }
+.ingredient-list li { padding: 0.5rem 0; border-bottom: 1px solid #F3F4F6; font-size: 0.95rem; display: flex; justify-content: space-between; }
+.ingredient-qty { font-weight: 600; color: #111827; }
+.justification-box { background: #F0FDFA; color: #0F766E; padding: 1rem; border-radius: 12px; margin-top: 1.5rem; font-size: 0.9rem; line-height: 1.6; }
+.warning-box-modal { background: #FEF2F2; color: #991B1B; padding: 1rem; border-radius: 12px; margin-top: 1rem; font-size: 0.9rem; font-weight: 500; }
